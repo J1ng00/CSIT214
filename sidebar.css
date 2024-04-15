@@ -8,7 +8,7 @@
     background-color: #3a3a3a;
     color: #fff;
     padding: 0px;
-    transition: left 0.3s ease;
+    transition: 0.3s ease;
     z-index: 2;
     /* Smooth transition when opening/closing */
 }

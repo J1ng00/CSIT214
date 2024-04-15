@@ -1,110 +1,80 @@
 .container {
-    margin: 10px;
-    display: flex;
+    align-items: center;
 }
 
-.container .left-window,
-.right-window {
-    border-radius: 10px;
-    padding: 15px;
-    border: 1px solid #ccc;
+.container .left-window, .right-window{
+    background-color: var(--calenderbackground-clr);
     height: fit-content;
-}
+    border-radius: 10px;
+    /* Center the content horizontally */
+    margin: 20px;
 
+}
 .container .left-window {
-    flex: 2;
-    margin-right: 10px;
-    background-color: #ffffff;
+    flex: 6;
+    margin-right: 20px;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
 }
 
 .container .right-window {
-    flex: 1;
-    background-color: #ffffff;
-}
-
-.container .section {
-    border-bottom: 1px solid #ccc;
-    padding-top: 10px;
-}
-
-.container .information {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-}
-
-.container .left-window .information label {
-    display: block;
-}
-
-.container .left-window .mybooking {
-    margin-top: 15px;
-}
-
-.container .mybooking .mybookingwindow {
-    overflow-y: auto;
-    min-height: 50px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding-bottom: 10px;
-}
-
-/*book ref# animation*/
-.container .mybooking .mybookingwindow .section:hover {
-    cursor: pointer;
-    background-color: #adadad;
-    box-shadow: rgba(141, 141, 141, 0.4) 0px 7px 29px 0px;
-    transition: all 0.5s;
-}
-
-.container .mybooking .mybookingwindow .section:active {
-    transform: translateY(2px);
+    flex: 4;
+    max-width: 500px;
     border-radius: 10px;
-    transition: 100ms;
-}
-/*book ref# animation*/
-
-.container .mybooking .mybookingwindow .section label {
-    cursor: pointer;
-    display: block;
-    margin: 5px;
-    margin-top: 0px;
+    padding: 15px;
+    padding: 15px;
 }
 
-.container .mybooking .mybookingwindow .section .date {
-    font-size: small;
+.right-window .purpose_input {
+    padding: 5px;
+    border: 1px solid var(--border-clr);
+    border-radius: 5px;
+    background-color: var(--calenderbackground-clr);
+    width: 90%;
+    min-height: 200px;
+    resize: none;
 }
 
-.container .right-window .filter {
-    cursor: default;
+/*----------checkbox animation----------*/
+.checkbox-switch {
     display: inline-block;
-    margin-right: 20px;
-    padding-bottom: 15px;
+    width: fit-content;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 50px;
+    z-index: 1;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: var(--calenderbackground-clr);
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s;
 }
 
-.container .right-window .filter input,
-select {
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100px;
+.timecheckbox {
+    display: none;
 }
 
-.container .right-window .booking-calender {
-    height: 70vh;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    padding-top: 0px;
+.timecheckbox:checked+.checkbox-switch {
+    background-color: var(--checkboxselected-clr);
+    box-shadow: 0 0px 20px var(--checkboxselectedshadow-clr);
 }
 
-.container .right-window .booking-calender .calender-section {
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
+.timecheckbox:disabled+.checkbox-switch {
+    cursor: default;
+    background-color: var(--checkboxdisabled-clr);
+    box-shadow: 0 0px 20px var(--checkboxdisabledshadow-clr);
 }
 
-@media (max-width: 500px) {
+/*----------checkbox animation----------*/
+@media (max-width: 800px) {
+    .container {
+        margin: 30px 0px;
+    }
+
     .container .right-window {
         display: none;
     }

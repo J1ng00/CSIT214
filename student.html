@@ -9,299 +9,152 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="topbar.css">
-    <link rel="stylesheet" href="sidebar.css">
-    <link rel="stylesheet" href="container.css">
     <link rel="stylesheet" href="informationtab.css">
+    <link rel="stylesheet" href="container.css">
+    <link rel="stylesheet" href="calender.css">
     <link rel="stylesheet" href="style.css">
 
     <!--other source(calander box)-->
-    <link rel="stylesheet" href="calender.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!--other source(calander box)-->
     <!--CSS-->
 
     <!--other source & not local(calander box)-->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!--other source & not local(calander box)-->
 </head>
 
 <body>
     <!--topbar-->
     <div class="top-bar">
-        <button class="tab-btn" onclick="openSidebar()">
-            <span>&#9776;</span> <!-- Hamburger icon -->
-        </button>
-        <h2 class="top-border-text">Student Center</h2>
-        <buttton class="information-icon" onclick=openInformationbar()>&#9776;</buttton>
+        <h2 class="top-border-text"><a href="../student.html">Student Center</a></h2>
+        <buttton class="information-icon" onclick=ToggleInformationbar()>&#9776;</buttton>
     </div>
     <!--topbar-->
 
-    <!--sidebar-->
-    <div class="sidebar" id="sidebar">
-        <div class="sidebartopbar">
-            <button class="tab-btn" onclick="closeSidebar()">
-                <span>&#9776;</span> <!-- Hamburger icon -->
-            </button>
-            <h2 class="sidebartitle">SideBar</h2>
-        </div>
+    <!--information tab-->
+    <div class="information-bar" id="information_bar">
+        <h4 class="information-bar-title">ABC</h4>
+
         <ul>
             <a href="../student.html">
-                <li>Home</li>
+                <li>student</li>
             </a>
-            <a href="../booking.html">
-                <li>Booking</li>
+            <a href="../payment.html">
+                <li>payment</li>
+            </a>
+            <a href="../staff.html">
+                <li>staff</li>
+            </a>
+            <a href="../index.html">
+                <li>index</li>
             </a>
             <!-- Add more links or content as needed -->
         </ul>
+        <button class="logout-btn">logout</button>
     </div>
-    <!--sidebar-->
+    <!--information tab-->
 
-    <!--sidebar-->
-    <div class="information-bar" id="information_bar">
-        <div class="information-bartopbar">
-            <button class="tab-btn" onclick="closeInformationbar()">
-                <span>&#9776;</span> <!-- Hamburger icon -->
-            </button>
+    <div class="content">
+        <!--container-->
+        <div class="container">
+            <!--left section-->
+            <div class="left-window">
+                <div class="calendar">
+                    <div class="month">
+                        <button class="fa fa-angle-left prev"></button>
+                        <div class="date"> </div>
+                        <button class="fa fa-angle-right next"></button>
+                    </div>
+                    <div class="weekdays">
+                        <div>sun</div>
+                        <div>mon</div>
+                        <div>tue</div>
+                        <div>wed</div>
+                        <div>thu</div>
+                        <div>fri</div>
+                        <div>sat</div>
+                    </div>
+                    <div class="days"></div>
+                    <!-- added using JS-->
+                    <div class="goto-today">
+                        <div class="goto">
+                            <input type="text" placeholder="mm/yyyy" class="date-input">
+                            <button class="goto-btn">go</button>
+                        </div>
+                        <button class="today-btn">today</button>
+                    </div>
+                </div>
+            </div>
+            <!--left section-->
+
+            <!--right section-->
+            <div class="right-window">
+                <label class="details">Room ID:
+                    <select>
+                        <option></option>
+                        <option>B4.17</option>
+                        <option>B4.17</option>
+                        <option>B4.17</option>
+                        <option>B4.17</option>
+                    </select>
+                </label>
+                <label class="details">Room Type:<select>
+                        <option></option>
+                        <option>Lecture Theatre</option>
+                        <option>LAB</option>
+                    </select></label>
+                <label class="details">Booking Date: <input type="text" id="datepicker" readonly></label>
+                <label class="details">Booking Time:
+                    <!--checkbox for time selection-->
+                    <div class="time-selection">
+                        <input type="checkbox" class="timecheckbox" id="0800" disabled />
+                        <label for="0800" class="checkbox-switch">0800</label>
+                        <input type="checkbox" class="timecheckbox" id="0900" />
+                        <label for="0900" class="checkbox-switch">0900</label>
+                        <input type="checkbox" class="timecheckbox" id="1000" />
+                        <label for="1000" class="checkbox-switch">1000</label>
+                        <input type="checkbox" class="timecheckbox" id="1100" />
+                        <label for="1100" class="checkbox-switch">1100</label>
+                        <input type="checkbox" class="timecheckbox" id="1200" />
+                        <label for="1200" class="checkbox-switch">1200</label>
+                        <input type="checkbox" class="timecheckbox" id="1300" disabled />
+                        <label for="1300" class="checkbox-switch">1300</label>
+                        <input type="checkbox" class="timecheckbox" id="1400" />
+                        <label for="1400" class="checkbox-switch">1400</label>
+                        <input type="checkbox" class="timecheckbox" id="1500" />
+                        <label for="1500" class="checkbox-switch">1500</label>
+                        <input type="checkbox" class="timecheckbox" id="1600" />
+                        <label for="1600" class="checkbox-switch">1600</label>
+                        <input type="checkbox" class="timecheckbox" id="1700" />
+                        <label for="1700" class="checkbox-switch">1700</label>
+                        <input type="checkbox" class="timecheckbox" id="1800" />
+                        <label for="1800" class="checkbox-switch">1800</label>
+                        <input type="checkbox" class="timecheckbox" id="1900" />
+                        <label for="1900" class="checkbox-switch">1900</label>
+                        <input type="checkbox" class="timecheckbox" id="2000" />
+                        <label for="2000" class="checkbox-switch">2000</label>
+                        <input type="checkbox" class="timecheckbox" id="2100" />
+                        <label for="2100" class="checkbox-switch">2100</label>
+                        <input type="checkbox" class="timecheckbox" id="2200" />
+                        <label for="2200" class="checkbox-switch">2200</label>
+                    </div>
+                    <!--checkbox for time selection-->
+                </label>
+                <label class="details">Purpose:</label>
+                <textarea type="text" class="purpose_input"></textarea>
+                <label class="details">Cost:<span>$10</span></label>
+                <a href="../payment.html"><button class="click-btn">Book now</button></a>
+            </div>
+            <!--right section-->
         </div>
+        <!--container-->
     </div>
-    <!--sidebar-->
-
-    <!--container-->
-    <div class="container">
-        <!-- left section-->
-        <div class="left-window">
-            <!--Information tab-->
-            <div class="information">
-                <h2 class="title">Student Information</h2>
-                <label>abc123@yahoo.com</label>
-                <label>ABC</label>
-                <button class="logout-btn">logout</button>
-            </div>
-            <!--Information tab-->
-
-            <!--MyBooking tab-->
-            <div class="mybooking">
-                <h2 class="title">My Booking</h2>
-                <!--sub tab-->
-                <div class="mybookingwindow">
-                    <!-- single booking ref# section-->
-                    <div class="section">
-                        <label>Booking Ref#</label>
-                        <label class="date">Date: dd/mm/yyyy</label>
-                    </div>
-                    <!-- single booking ref# section-->
-
-                    <!-- single booking ref# section-->
-                    <div class="section">
-                        <label>Booking Ref#</label>
-                        <label class="date">Date: dd/mm/yyyy</label>
-                    </div>
-                    <!-- single booking ref# section-->
-
-                    <!-- single booking ref# section-->
-                    <div class="section">
-                        <label>Booking Ref#</label>
-                        <label class="date">Date: dd/mm/yyyy</label>
-                    </div>
-                    <!-- single booking ref# section-->
-
-                    <!-- single booking ref# section-->
-                    <div class="section">
-                        <label>Booking Ref#</label>
-                        <label class="date">Date: dd/mm/yyyy</label>
-                    </div>
-                    <!-- single booking ref# section-->
-                </div>
-
-                <!--sub tab-->
-            </div>
-            <!--MyBooking tab-->
-        </div>
-        <!--left section-->
-
-        <!--right section-->
-        <div class="right-window">
-            <h2 class="title">Calendar</h2>
-            <!--filter-->
-            <!--Date filter-->
-            <div class="filter">
-                <label>Date:</label>
-                <!--other source(calander box)-->
-                <input type="text" id="datepicker" readonly>
-                <!--other source(calander box)-->
-            </div>
-            <!--Date filter-->
-
-            <!--Type filter-->
-            <div class="filter">
-                <label>Type:</label>
-                <select id="typeSelect">
-                    <option>Select</option>
-                    <option>Lecture Theatre</option>
-                    <option>Lab</option>
-                </select>
-            </div>
-            <!--Type filter-->
-
-            <!--Capacity filter-->
-            <div class="filter">
-                <label>Capacity:</label>
-                <select id="capacitySelect">
-                    <option>Select</option>
-                    <option>>20</option>
-                    <option>>50</option>
-                    <option>>100</option>
-                </select>
-            </div>
-            <!--Capacity filter-->
-
-            <!--Duration filter-->
-            <div class="filter">
-                <label>Duration:</label>
-                <input type="text" id="duration">
-            </div>
-            <!--Duration filter-->
-            <!--filter-->
-
-            <!--calender-->
-            <div class="booking-calender">
-                <!--single calender section-->
-                <div class="calender-section">
-                    <label class="date">Date: 4/13/2024</label>
-                    <div class="room">
-                        <!--availability-btn-->
-                        <button class="click-btn">
-                            Lecture Theatre:
-                            <span id="lecture_theatre">10</span>
-                        </button>
-                        <button class="click-btn">
-                            Lab:
-                            <span id="Lab">5</span>
-                        </button>
-                        <!--availability-btn-->
-                    </div>
-                </div>
-                <!--single calender section-->
-
-                <!--single calender section-->
-                <div class="calender-section">
-                    <label class="date">Date: 4/13/2024</label>
-                    <div class="room">
-                        <!--availability-btn-->
-                        <button class="click-btn">
-                            Lecture Theatre:
-                            <span id="lecture_theatre">10</span>
-                        </button>
-                        <button class="click-btn">
-                            Lab:
-                            <span id="Lab">5</span>
-                        </button>
-                        <!--availability-btn-->
-                    </div>
-                </div>
-                <!--single calender section-->
-
-                <!--single calender section-->
-                <div class="calender-section">
-                    <label class="date">Date: 4/13/2024</label>
-                    <div class="room">
-                        <!--availability-btn-->
-                        <button class="click-btn">
-                            Lecture Theatre:
-                            <span id="lecture_theatre">10</span>
-                        </button>
-                        <button class="click-btn">
-                            Lab:
-                            <span id="Lab">5</span>
-                        </button>
-                        <!--availability-btn-->
-                    </div>
-                </div>
-                <!--single calender section-->
-
-                <!--single calender section-->
-                <div class="calender-section">
-                    <label class="date">Date: 4/13/2024</label>
-                    <div class="room">
-                        <!--availability-btn-->
-                        <button class="click-btn">
-                            Lecture Theatre:
-                            <span id="lecture_theatre">10</span>
-                        </button>
-                        <button class="click-btn">
-                            Lab:
-                            <span id="Lab">5</span>
-                        </button>
-                        <!--availability-btn-->
-                    </div>
-                </div>
-                <!--single calender section-->
-
-                <!--single calender section-->
-                <div class="calender-section">
-                    <label class="date">Date: 4/13/2024</label>
-                    <div class="room">
-                        <!--availability-btn-->
-                        <button class="click-btn">
-                            Lecture Theatre:
-                            <span id="lecture_theatre">10</span>
-                        </button>
-                        <button class="click-btn">
-                            Lab:
-                            <span id="Lab">5</span>
-                        </button>
-                        <!--availability-btn-->
-                    </div>
-                </div>
-                <!--single calender section-->
-
-                <!--single calender section-->
-                <div class="calender-section">
-                    <label class="date">Date: 4/13/2024</label>
-                    <div class="room">
-                        <!--availability-btn-->
-                        <button class="click-btn">
-                            Lecture Theatre:
-                            <span id="lecture_theatre">10</span>
-                        </button>
-                        <button class="click-btn">
-                            Lab:
-                            <span id="Lab">5</span>
-                        </button>
-                        <!--availability-btn-->
-                    </div>
-                </div>
-                <!--single calender section-->
-
-                <!--single calender section-->
-                <div class="calender-section">
-                    <label class="date">Date: 4/13/2024</label>
-                    <div class="room">
-                        <!--availability-btn-->
-                        <button class="click-btn">
-                            Lecture Theatre:
-                            <span id="lecture_theatre">10</span>
-                        </button>
-                        <button class="click-btn">
-                            Lab:
-                            <span id="Lab">5</span>
-                        </button>
-                        <!--availability-btn-->
-                    </div>
-                </div>
-                <!--single calender section-->
-            </div>
-        </div>
-        <!--right section-->
-    </div>
-
     <!--javascript-->
-    <script src="sidebar_script.js"></script>
-    <!--other source(calender box)-->
-    <script src="calender_script.js"></script>
-    <!--other source(calender box)-->
     <script src="information_bar_script.js"></script>
+    <script src="staff.js"> </script>
     <!--javascript-->
 </body>
 

@@ -1,32 +1,35 @@
 .information-bar {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    width: 90%;
+    position: fixed;
+    top: 55px;
+    right: 0px;
+    margin-right: 5px;
+    padding: 0px;
+    width: 250px;
     max-height: 0;
     overflow: hidden;
-    border-radius: 5px;
-    background-color: #fff;
-    transform: translateX(-50%);
-    transition: max-height 0.5s;
+    background-color: #3a3a3a;
+    color: #fff;
+    transition: max-height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+    /* Smooth transition for height and opacity */
+    z-index: 2;
+    border-radius: 10px;
 }
 
-.information-bar .content {
-    margin-left: 0;
-    /* Ensure content starts after information-bar */
-    transition: margin-left 0.3s ease;
-    /* Smooth transition when opening/closing */
+.information-bar .information-bar-title {
+    margin: 0px;
+    padding: 10px;
+    border-bottom: 2px solid rgb(193, 163, 98);
 }
 
 .information-bar ul {
     list-style-type: none;
+    margin: 5px;
     padding: 0;
-    margin-top: 25px;
 }
 
 .information-bar ul li {
     display: block;
-    padding: 10px 15px;
+    padding: 5px 10px;
     margin-right: 5px;
     border-radius: 5px;
     transition: background-color 300ms;
@@ -48,19 +51,4 @@
 .information-bar ul li:active a {
     color: #3a3a3a;
     transition: 100ms;
-}
-
-/*topbar style*/
-.information-bar .information-bartopbar {
-    display: flex;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 2px solid rgb(193, 163, 98);
-}
-
-.information-bar .information-bartitle {
-    color: #ffffff;
-    margin: 0;
-    margin-left: 10px;
-    text-align: center;
 }

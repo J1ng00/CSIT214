@@ -1,4 +1,4 @@
-.booking-form {
+.right-window {
     margin: 10px;
     padding: 15px;
     background-color: white;
@@ -6,7 +6,7 @@
     border-radius: 10px;
 }
 
-.booking-form .purpose_input {
+.right-window .purpose_input {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
