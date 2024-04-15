@@ -1,0 +1,111 @@
+.container {
+    margin: 10px;
+    display: flex;
+}
+
+.container .left-window,
+.right-window {
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    height: fit-content;
+}
+
+.container .left-window {
+    flex: 2;
+    margin-right: 10px;
+    background-color: #ffffff;
+}
+
+.container .right-window {
+    flex: 1;
+    background-color: #ffffff;
+}
+
+.container .section {
+    border-bottom: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.container .information {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.container .left-window .information label {
+    display: block;
+}
+
+.container .left-window .mybooking {
+    margin-top: 15px;
+}
+
+.container .mybooking .mybookingwindow {
+    overflow-y: auto;
+    min-height: 50px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+/*book ref# animation*/
+.container .mybooking .mybookingwindow .section:hover {
+    cursor: pointer;
+    background-color: #adadad;
+    box-shadow: rgba(141, 141, 141, 0.4) 0px 7px 29px 0px;
+    transition: all 0.5s;
+}
+
+.container .mybooking .mybookingwindow .section:active {
+    transform: translateY(2px);
+    border-radius: 10px;
+    transition: 100ms;
+}
+/*book ref# animation*/
+
+.container .mybooking .mybookingwindow .section label {
+    cursor: pointer;
+    display: block;
+    margin: 5px;
+    margin-top: 0px;
+}
+
+.container .mybooking .mybookingwindow .section .date {
+    font-size: small;
+}
+
+.container .right-window .filter {
+    cursor: default;
+    display: inline-block;
+    margin-right: 20px;
+    padding-bottom: 15px;
+}
+
+.container .right-window .filter input,
+select {
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.container .right-window .booking-calender {
+    height: 70vh;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.container .right-window .booking-calender .calender-section {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+@media (max-width: 500px) {
+    .container .right-window {
+        display: none;
+    }
+}

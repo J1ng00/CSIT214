@@ -1,0 +1,66 @@
+.information-bar {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    width: 90%;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #fff;
+    transform: translateX(-50%);
+    transition: max-height 0.5s;
+}
+
+.information-bar .content {
+    margin-left: 0;
+    /* Ensure content starts after information-bar */
+    transition: margin-left 0.3s ease;
+    /* Smooth transition when opening/closing */
+}
+
+.information-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.information-bar ul li {
+    display: block;
+    padding: 10px 15px;
+    margin-right: 5px;
+    border-radius: 5px;
+    transition: background-color 300ms;
+}
+
+/*change color when hover onto it*/
+.information-bar ul li:hover {
+    background-color: #646464;
+    transition: 100ms;
+}
+
+/*animation when clicking(<li> part)*/
+.information-bar ul li:active {
+    background-color: #919191;
+    transition: background-color 100ms;
+}
+
+/*animation when clicking(<a> part)*/
+.information-bar ul li:active a {
+    color: #3a3a3a;
+    transition: 100ms;
+}
+
+/*topbar style*/
+.information-bar .information-bartopbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 2px solid rgb(193, 163, 98);
+}
+
+.information-bar .information-bartitle {
+    color: #ffffff;
+    margin: 0;
+    margin-left: 10px;
+    text-align: center;
+}

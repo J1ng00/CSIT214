@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RBS</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!--other source(calander box)-->
+    <link rel="stylesheet" href="calender.css">
+    <!--other source(calander box)-->
+    <!--CSS-->
+
+    <!--other source & not local(calander box)-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--other source & not local(calander box)-->
+</head>
+
+<body>
+    <!--topbar-->
+    <div class="top-bar">
+        <button class="tab-btn" onclick="openSidebar()">
+            <span>&#9776;</span> <!-- Hamburger icon -->
+        </button>
+        <h2 class="top-border-text">Student Center</h2>
+    </div>
+    <!--topbar-->
+
+    <!--sidebar-->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebartopbar">
+            <button class="tab-btn" onclick="closeSidebar()">
+                <span>&#9776;</span> <!-- Hamburger icon -->
+            </button>
+            <h2 class="sidebartitle">SideBar</h2>
+        </div>
+        <ul>
+            <a href="../student.html">
+                <li>Home</li>
+            </a>
+            <a href="../booking.html">
+                <li>Booking</li>
+            </a>
+            <!-- Add more links or content as needed -->
+        </ul>
+    </div>
+    <!--sidebar-->
+
+    <!--payment page-->
+    <div class="payment">
+        <label class="instruction">Scan QR code below for payment.</label>
+        <label class="details">Cost:<span>$10</span></label>
+        <!--image-->
+        <img class="QRimg"
+            src="https://th.bing.com/th/id/OIP.GbQP3BFbNky9-3ThVjEGrAHaHa?w=186&h=186&c=7&r=0&o=5&pid=1.7">
+        <!--image-->
+        <label class="details">Time left:<span id="time_left">5:00</span></label>
+        <!--cancel-btn-->
+        <a href="../student.html"><button class="cancel-btn">Cancel</button></a>
+        <!--cancel-btn-->
+    </div>
+    <!--payment page-->
+
+    <!--javascript-->
+    <script src="sidebar_script.js"></script>
+    <script src="countDown.js"></script>
+    <!--javascript-->
+</body>
+
+</html>

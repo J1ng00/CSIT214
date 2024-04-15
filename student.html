@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RBS</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="container.css">
+    <link rel="stylesheet" href="informationtab.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!--other source(calander box)-->
+    <link rel="stylesheet" href="calender.css">
+    <!--other source(calander box)-->
+    <!--CSS-->
+
+    <!--other source & not local(calander box)-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--other source & not local(calander box)-->
+</head>
+
+<body>
+    <!--topbar-->
+    <div class="top-bar">
+        <button class="tab-btn" onclick="openSidebar()">
+            <span>&#9776;</span> <!-- Hamburger icon -->
+        </button>
+        <h2 class="top-border-text">Student Center</h2>
+        <buttton class="information-icon" onclick=openInformationbar()>&#9776;</buttton>
+    </div>
+    <!--topbar-->
+
+    <!--sidebar-->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebartopbar">
+            <button class="tab-btn" onclick="closeSidebar()">
+                <span>&#9776;</span> <!-- Hamburger icon -->
+            </button>
+            <h2 class="sidebartitle">SideBar</h2>
+        </div>
+        <ul>
+            <a href="../student.html">
+                <li>Home</li>
+            </a>
+            <a href="../booking.html">
+                <li>Booking</li>
+            </a>
+            <!-- Add more links or content as needed -->
+        </ul>
+    </div>
+    <!--sidebar-->
+
+    <!--sidebar-->
+    <div class="information-bar" id="information_bar">
+        <div class="information-bartopbar">
+            <button class="tab-btn" onclick="closeInformationbar()">
+                <span>&#9776;</span> <!-- Hamburger icon -->
+            </button>
+        </div>
+    </div>
+    <!--sidebar-->
+
+    <!--container-->
+    <div class="container">
+        <!-- left section-->
+        <div class="left-window">
+            <!--Information tab-->
+            <div class="information">
+                <h2 class="title">Student Information</h2>
+                <label>abc123@yahoo.com</label>
+                <label>ABC</label>
+                <button class="logout-btn">logout</button>
+            </div>
+            <!--Information tab-->
+
+            <!--MyBooking tab-->
+            <div class="mybooking">
+                <h2 class="title">My Booking</h2>
+                <!--sub tab-->
+                <div class="mybookingwindow">
+                    <!-- single booking ref# section-->
+                    <div class="section">
+                        <label>Booking Ref#</label>
+                        <label class="date">Date: dd/mm/yyyy</label>
+                    </div>
+                    <!-- single booking ref# section-->
+
+                    <!-- single booking ref# section-->
+                    <div class="section">
+                        <label>Booking Ref#</label>
+                        <label class="date">Date: dd/mm/yyyy</label>
+                    </div>
+                    <!-- single booking ref# section-->
+
+                    <!-- single booking ref# section-->
+                    <div class="section">
+                        <label>Booking Ref#</label>
+                        <label class="date">Date: dd/mm/yyyy</label>
+                    </div>
+                    <!-- single booking ref# section-->
+
+                    <!-- single booking ref# section-->
+                    <div class="section">
+                        <label>Booking Ref#</label>
+                        <label class="date">Date: dd/mm/yyyy</label>
+                    </div>
+                    <!-- single booking ref# section-->
+                </div>
+
+                <!--sub tab-->
+            </div>
+            <!--MyBooking tab-->
+        </div>
+        <!--left section-->
+
+        <!--right section-->
+        <div class="right-window">
+            <h2 class="title">Calendar</h2>
+            <!--filter-->
+            <!--Date filter-->
+            <div class="filter">
+                <label>Date:</label>
+                <!--other source(calander box)-->
+                <input type="text" id="datepicker" readonly>
+                <!--other source(calander box)-->
+            </div>
+            <!--Date filter-->
+
+            <!--Type filter-->
+            <div class="filter">
+                <label>Type:</label>
+                <select id="typeSelect">
+                    <option>Select</option>
+                    <option>Lecture Theatre</option>
+                    <option>Lab</option>
+                </select>
+            </div>
+            <!--Type filter-->
+
+            <!--Capacity filter-->
+            <div class="filter">
+                <label>Capacity:</label>
+                <select id="capacitySelect">
+                    <option>Select</option>
+                    <option>>20</option>
+                    <option>>50</option>
+                    <option>>100</option>
+                </select>
+            </div>
+            <!--Capacity filter-->
+
+            <!--Duration filter-->
+            <div class="filter">
+                <label>Duration:</label>
+                <input type="text" id="duration">
+            </div>
+            <!--Duration filter-->
+            <!--filter-->
+
+            <!--calender-->
+            <div class="booking-calender">
+                <!--single calender section-->
+                <div class="calender-section">
+                    <label class="date">Date: 4/13/2024</label>
+                    <div class="room">
+                        <!--availability-btn-->
+                        <button class="click-btn">
+                            Lecture Theatre:
+                            <span id="lecture_theatre">10</span>
+                        </button>
+                        <button class="click-btn">
+                            Lab:
+                            <span id="Lab">5</span>
+                        </button>
+                        <!--availability-btn-->
+                    </div>
+                </div>
+                <!--single calender section-->
+
+                <!--single calender section-->
+                <div class="calender-section">
+                    <label class="date">Date: 4/13/2024</label>
+                    <div class="room">
+                        <!--availability-btn-->
+                        <button class="click-btn">
+                            Lecture Theatre:
+                            <span id="lecture_theatre">10</span>
+                        </button>
+                        <button class="click-btn">
+                            Lab:
+                            <span id="Lab">5</span>
+                        </button>
+                        <!--availability-btn-->
+                    </div>
+                </div>
+                <!--single calender section-->
+
+                <!--single calender section-->
+                <div class="calender-section">
+                    <label class="date">Date: 4/13/2024</label>
+                    <div class="room">
+                        <!--availability-btn-->
+                        <button class="click-btn">
+                            Lecture Theatre:
+                            <span id="lecture_theatre">10</span>
+                        </button>
+                        <button class="click-btn">
+                            Lab:
+                            <span id="Lab">5</span>
+                        </button>
+                        <!--availability-btn-->
+                    </div>
+                </div>
+                <!--single calender section-->
+
+                <!--single calender section-->
+                <div class="calender-section">
+                    <label class="date">Date: 4/13/2024</label>
+                    <div class="room">
+                        <!--availability-btn-->
+                        <button class="click-btn">
+                            Lecture Theatre:
+                            <span id="lecture_theatre">10</span>
+                        </button>
+                        <button class="click-btn">
+                            Lab:
+                            <span id="Lab">5</span>
+                        </button>
+                        <!--availability-btn-->
+                    </div>
+                </div>
+                <!--single calender section-->
+
+                <!--single calender section-->
+                <div class="calender-section">
+                    <label class="date">Date: 4/13/2024</label>
+                    <div class="room">
+                        <!--availability-btn-->
+                        <button class="click-btn">
+                            Lecture Theatre:
+                            <span id="lecture_theatre">10</span>
+                        </button>
+                        <button class="click-btn">
+                            Lab:
+                            <span id="Lab">5</span>
+                        </button>
+                        <!--availability-btn-->
+                    </div>
+                </div>
+                <!--single calender section-->
+
+                <!--single calender section-->
+                <div class="calender-section">
+                    <label class="date">Date: 4/13/2024</label>
+                    <div class="room">
+                        <!--availability-btn-->
+                        <button class="click-btn">
+                            Lecture Theatre:
+                            <span id="lecture_theatre">10</span>
+                        </button>
+                        <button class="click-btn">
+                            Lab:
+                            <span id="Lab">5</span>
+                        </button>
+                        <!--availability-btn-->
+                    </div>
+                </div>
+                <!--single calender section-->
+
+                <!--single calender section-->
+                <div class="calender-section">
+                    <label class="date">Date: 4/13/2024</label>
+                    <div class="room">
+                        <!--availability-btn-->
+                        <button class="click-btn">
+                            Lecture Theatre:
+                            <span id="lecture_theatre">10</span>
+                        </button>
+                        <button class="click-btn">
+                            Lab:
+                            <span id="Lab">5</span>
+                        </button>
+                        <!--availability-btn-->
+                    </div>
+                </div>
+                <!--single calender section-->
+            </div>
+        </div>
+        <!--right section-->
+    </div>
+
+    <!--javascript-->
+    <script src="sidebar_script.js"></script>
+    <!--other source(calender box)-->
+    <script src="calender_script.js"></script>
+    <!--other source(calender box)-->
+    <script src="information_bar_script.js"></script>
+    <!--javascript-->
+</body>
+
+</html>

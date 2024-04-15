@@ -1,0 +1,44 @@
+.calendar-dropdown {
+    position: relative;
+    width: 200px; /* Adjust width as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.selected-date {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.calendar-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.calendar-container.visible {
+    display: block;
+}
+
+.calendar-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-container th, .calendar-container td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.calendar-container th {
+    background-color: #f0f0f0;
+}

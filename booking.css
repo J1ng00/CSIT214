@@ -1,0 +1,51 @@
+.booking-form {
+    margin: 10px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.booking-form .purpose_input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    width: 90%;
+    min-height: 200px;
+    resize: none;
+}
+
+/*----------checkbox animation----------*/
+.checkbox-switch {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 50px;
+    z-index: 1;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.timecheckbox {
+    display: none;
+}
+
+.timecheckbox:checked+.checkbox-switch {
+    background-color: rgb(193, 163, 98);
+    box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
+}
+
+.timecheckbox:disabled+.checkbox-switch {
+    cursor: default;
+    background-color: rgb(193, 98, 98);
+    box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
+}
+/*----------checkbox animation----------*/
