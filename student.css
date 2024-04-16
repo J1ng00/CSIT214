@@ -1,0 +1,166 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .left-window,
+.right-window {
+    background-color: var(--calenderbackground-clr);
+    height: fit-content;
+    border-radius: 10px;
+    /* Center the content horizontally */
+    margin: 20px;
+
+}
+
+.container .left-window {
+    flex: 6;
+    margin-right: 20px;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+}
+
+.container .right-window {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+
+.container .right-window .right-top {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--calenderbackground-clr);
+    border-radius: 10px;
+}
+
+.container .right-window .right-top h2 {
+    border-bottom: 2px solid var(--primary-clr);
+}
+
+.container .right-window .right-top h4 {
+    margin-top: 5px;
+}
+
+.container .right-window .right-top form {
+    margin-top: 10px;
+}
+
+.container .right-window .right-top .available-room-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.container .right-window .right-bottom {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--calenderbackground-clr);
+    border-radius: 10px;
+    ;
+}
+
+.right-window .purpose_input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--calenderbackground-clr);
+    width: 90%;
+    min-height: 200px;
+    resize: none;
+}
+
+/*----------selection radio animation----------*/
+.selection-switch {
+    display: inline-block;
+    width: fit-content;
+    margin: 2px;
+    padding: 10px 20px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 50px;
+    z-index: 1;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: var(--calenderbackground-clr);
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.selection-switch:hover {
+    background-color: var(--primary-clr);
+    color: hsl(0, 0%, 100%);
+    box-shadow: var(--primaryshadow-clr) 0px 7px 29px 0px;
+}
+
+.selection-btn {
+    display: none;
+}
+
+.selection-btn:checked+.selection-switch {
+    background-color: var(--checkboxselected-clr);
+    box-shadow: 0 0px 20px var(--checkboxselectedshadow-clr);
+}
+
+.selection-btn:disabled+.selection-switch {
+    cursor: default;
+    background-color: var(--checkboxdisabled-clr);
+    box-shadow: 0 0px 20px var(--checkboxdisabledshadow-clr);
+}
+
+/*----------selection radio animation----------*/
+
+/*----------checkbox animation----------*/
+.checkbox-switch {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 50px;
+    z-index: 1;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: var(--calenderbackground-clr);
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.checkbox-switch:hover {
+    background-color: var(--primary-clr);
+    color: hsl(0, 0%, 100%);
+    box-shadow: var(--primaryshadow-clr) 0px 7px 29px 0px;
+}
+
+.timecheckbox {
+    display: none;
+}
+
+.timecheckbox:checked+.checkbox-switch {
+    background-color: var(--checkboxselected-clr);
+    box-shadow: 0 0px 20px var(--checkboxselectedshadow-clr);
+}
+
+.timecheckbox:disabled+.checkbox-switch {
+    cursor: default;
+    background-color: var(--checkboxdisabled-clr);
+    box-shadow: 0 0px 20px var(--checkboxdisabledshadow-clr);
+}
+
+/*----------checkbox animation----------*/
+@media (max-width: 800px) {
+    .container {
+        margin: 30px 0px;
+    }
+
+    .container .right-window {
+        display: none;
+    }
+}

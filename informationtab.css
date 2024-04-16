@@ -1,13 +1,12 @@
 .information-bar {
     position: fixed;
-    top: 55px;
-    right: 0px;
-    margin-right: 5px;
+    top: 75px;
+    right: 20px;
     padding: 0px;
     width: 250px;
     max-height: 0;
     overflow: hidden;
-    background-color: #3a3a3a;
+    background-color: var(--barbackground-clr);
     color: #fff;
     transition: max-height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
     /* Smooth transition for height and opacity */
@@ -18,7 +17,7 @@
 .information-bar .information-bar-title {
     margin: 0px;
     padding: 10px;
-    border-bottom: 2px solid rgb(193, 163, 98);
+    border-bottom: 2px solid var(--primary-clr);
 }
 
 .information-bar ul {
@@ -37,13 +36,13 @@
 
 /*change color when hover onto it*/
 .information-bar ul li:hover {
-    background-color: #646464;
-    transition: 100ms;
+    background-color: rgb(85, 51, 80);
+    transition: background-color 100ms;
 }
 
 /*animation when clicking(<li> part)*/
 .information-bar ul li:active {
-    background-color: #919191;
+    background-color: rgb(129, 93, 124);
     transition: background-color 100ms;
 }
 

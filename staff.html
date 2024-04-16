@@ -15,15 +15,16 @@
 <body>
     <!--topbar-->
     <div class="top-bar">
-        <h2 class="top-border-text"><a href="../student.html">Student Center</a></h2>
-        <buttton class="information-icon" onclick=ToggleInformationbar()>&#9776;</buttton>
+        <h2 class="top-border-text">Room Booking System</h2>
+        <buttton class="information-icon" onclick=ToggleInformationbar()>
+            <i class="fa-solid fa-user"></i></i><!--person icon-->
+        </buttton>
     </div>
     <!--topbar-->
 
     <!--information tab-->
     <div class="information-bar" id="information_bar">
         <h4 class="information-bar-title">ABC</h4>
-
         <ul>
             <a href="../student.html">
                 <li>student</li>
@@ -43,68 +44,73 @@
     </div>
     <!--information tab-->
 
-    <div class="content">
-        <div class="container">
-            <div class="left">
-                <div class="calendar">
-                    <div class="month">
-                        <i class="fa fa-angle-left prev"></i>
-                        <div class="date"> </div>
-                        <i class="fa fa-angle-right next"></i>
+    <!--backgorund animation-->
+    <div class="background">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+    </div>
+    <!--background animation-->
+
+    <div class="container">
+        <div class="left">
+            <div class="calendar">
+                <div class="month">
+                    <i class="fa fa-angle-left prev"></i>
+                    <div class="date"> </div>
+                    <i class="fa fa-angle-right next"></i>
+                </div>
+                <div class="weekdays">
+                    <div>sun</div>
+                    <div>mon</div>
+                    <div>tue</div>
+                    <div>wed</div>
+                    <div>thu</div>
+                    <div>fri</div>
+                    <div>sat</div>
+                </div>
+                <div class="days"></div>
+                <!-- added using JS-->
+                <div class="goto-today">
+                    <div class="goto">
+                        <input type="text" placeholder="mm/yyyy" class="date-input">
+                        <button class="goto-btn">go</button>
                     </div>
-                    <div class="weekdays">
-                        <div>sun</div>
-                        <div>mon</div>
-                        <div>tue</div>
-                        <div>wed</div>
-                        <div>thu</div>
-                        <div>fri</div>
-                        <div>sat</div>
-                    </div>
-                    <div class="days"></div>
-                    <!-- added using JS-->
-                    <div class="goto-today">
-                        <div class="goto">
-                            <input type="text" placeholder="mm/yyyy" class="date-input">
-                            <button class="goto-btn">go</button>
-                        </div>
-                        <button class="today-btn">today</button>
-                    </div>
+                    <button class="today-btn">today</button>
                 </div>
             </div>
-            <div class="right">
-                <div class="today-date">
-                    <div class="event-day">wed</div>
-                    <div class="event-date">16 november 2022</div>
-                </div>
-                <div class="events">
-                    <!-- added using jscript -->
-                </div>
-                <div class="add-event-wrapper">
-                    <div class="add-event-header">
-                        <div class="title">Add Event</div>
-                        <i class="fas fa-times close"></i>
-                    </div>
-                    <div class="add-event-body">
-                        <div class="add-event-input">
-                            <input type="text" placeholder="Event Name" class="event-name" />
-                        </div>
-                        <div class="add-event-input">
-                            <input type="text" placeholder="Event Time From" class="event-time-from" />
-                        </div>
-                        <div class="add-event-input">
-                            <input type="text" placeholder="Event Time To" class="event-time-to" />
-                        </div>
-                    </div>
-                    <div class="add-event-footer">
-                        <button class="add-event-btn">add event</button>
-                    </div>
-                </div>
-            </div>
-            <button class="add-event">
-                <i class="fas fa-plus"></i>
-            </button>
         </div>
+        <div class="right">
+            <div class="today-date">
+                <div class="event-day">wed</div>
+                <div class="event-date">16 november 2022</div>
+            </div>
+            <div class="events">
+                <!-- added using jscript -->
+            </div>
+            <div class="add-event-wrapper">
+                <div class="add-event-header">
+                    <div class="title">Add Event</div>
+                    <i class="fas fa-times close"></i>
+                </div>
+                <div class="add-event-body">
+                    <div class="add-event-input">
+                        <input type="text" placeholder="Event Name" class="event-name" />
+                    </div>
+                    <div class="add-event-input">
+                        <input type="text" placeholder="Event Time From" class="event-time-from" />
+                    </div>
+                    <div class="add-event-input">
+                        <input type="text" placeholder="Event Time To" class="event-time-to" />
+                    </div>
+                </div>
+                <div class="add-event-footer">
+                    <button class="add-event-btn">add event</button>
+                </div>
+            </div>
+        </div>
+        <button class="add-event">
+            <i class="fas fa-plus"></i>
+        </button>
     </div>
     <script src="staff.js"> </script>
     <script src="information_bar_script.js"></script>

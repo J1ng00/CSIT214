@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,17 +11,9 @@
     font-family: "Poppins", sans-serif;
 }
 
-.content {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--body-clr);
-}
-
 .container {
-    /*position: relative;
-    width: 1200;
+    position: relative;
+    /*width: 1200;
     min-height: 850px;
     margin: 0 auto;
     padding: 5px;

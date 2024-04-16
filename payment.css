@@ -1,18 +1,44 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container {
     min-width: 50vh;
 }
 
 .payment {
+    position: relative;
     display: flex;
     flex-direction: column;
-    /* Align items in a column */
     justify-content: center;
     align-items: center;
+    min-width: 50%;
     background-color: white;
     margin: 15px;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 10px;
+}
+
+.payment::before,
+.payment::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 12px;
+    height: 97%;
+    border-radius: 0 5px 5px 0;
+    background-color: var(--calenderbackground2-clr);
+    transform: translateY(-50%);
+}
+
+.payment::before {
+    height: 94%;
+    left: calc(100% + 12px);
+    background-color: var(--calenderbackground3-clr);
 }
 
 .payment label {
@@ -27,7 +53,7 @@
 
 .payment .QRimg {
     display: flex;
-    max-width: 30vh;
+    max-width: 40vh;
     width: 100%;
 }
 
