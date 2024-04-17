@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="topbar.css">
+<link rel="stylesheet" href="informationcontainer.css">
+<link rel="stylesheet" href="buttons.css">
+
+<!--topbar-->
+<div class="top-bar">
+    <h2 class="top-border-text">Room Booking System</h2>
+    <buttton class="information-icon" onclick=ToggleInformationbar()>
+        <i class="fa-solid fa-user"></i></i><!--person icon-->
+    </buttton>
+</div>
+<!--topbar-->
+
+<!--information tab-->
+<div class="information-container" id="information_container">
+    <h4 class="information-container-title">ABC</h4>
+    <ul>
+        <a href="../student.html">
+            <li>student</li>
+        </a>
+        <a href="../payment.html">
+            <li>payment</li>
+        </a>
+        <a href="../staff.html">
+            <li>staff</li>
+        </a>
+        <a href="../index.html">
+            <li>index</li>
+        </a>
+        <!-- Add more links or content as needed -->
+    </ul>
+    <button class="logout-btn" onclick="logout()">logout</button>
+</div>
+<!--information tab-->
+
+<script src="information_container_script.js"></script>

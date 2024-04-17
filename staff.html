@@ -1,10 +1,32 @@
 <html>
-<head>
-    <link rel="stylesheet" href="staff.css"/> <!-- remember to change -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>STAFF</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#topbar").load("topbar.html");
+        });
+    </script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="staff.css">
+    <link rel="stylesheet" href="calender.css">
+
+    <!--other source(-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--other source-->
+    <!--CSS-->
 </head>
+
+
 <body>
     <!--topbar-->
         <div class="top-bar">
@@ -50,14 +72,14 @@
                     <div>sat</div>
                 </div>
                 <div class="days"></div>
-                    <!-- added using JS-->
-                    <div class="goto-today">
-                        <div class = "goto">
-                            <input type = "text" placeholder="mm/yyyy" class = "date-input">
-                            <button class = "goto-btn">go</button>
-                        </div>
-                        <button class="today-btn">today</button>
+                <!-- added using JS-->
+                <div class="goto-today">
+                    <div class="goto">
+                        <input type="text" placeholder="mm/yyyy" class="date-input">
+                        <button class="goto-btn">go</button>
                     </div>
+                    <button class="today-btn">today</button>
+                </div>
             </div>
         </div>
 
@@ -76,7 +98,7 @@
                 </div>
                 <div class="add-event-body">
                     <div class="add-event-input">
-                        <input type="text" placeholder="Room Name" class="event-name"/>
+                        <input type="text" placeholder="Room Name" class="event-name" />
                     </div>
                     <div class="add-event-time">
                         <label class="timelabel">Time From</label>
@@ -100,6 +122,7 @@
     </div>
 
     </div>
-    <script src = "staff.js"> </script> <!-- remember to change -->
+    <script src="staff.js"> </script>
 </body>
+
 </html>
