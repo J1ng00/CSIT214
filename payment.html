@@ -5,15 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>RBS</title>
+    <title>PAYMENT</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#topbar").load("topbar.html");
+        });
+    </script>
 
     <!--CSS-->
-    <link rel="stylesheet" href="topbar.css">
-    <link rel="stylesheet" href="informationtab.css">
-    <link rel="stylesheet" href="payment.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="calender.css">
 
-    <!--other source-->
+    <!--other source(-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,43 +29,7 @@
 
 
 <body>
-    <!--topbar-->
-    <div class="top-bar">
-        <h2 class="top-border-text">Room Booking System</h2>
-        <buttton class="information-icon" onclick=ToggleInformationbar()>
-            <i class="fa-solid fa-user"></i></i><!--person icon-->
-        </buttton>
-    </div>
-    <!--topbar-->
-
-    <!--information tab-->
-    <div class="information-bar" id="information_bar">
-        <h4 class="information-bar-title">ABC</h4>
-        <ul>
-            <a href="../student.html">
-                <li>student</li>
-            </a>
-            <a href="../payment.html">
-                <li>payment</li>
-            </a>
-            <a href="../staff.html">
-                <li>staff</li>
-            </a>
-            <a href="../index.html">
-                <li>index</li>
-            </a>
-            <!-- Add more links or content as needed -->
-        </ul>
-        <button class="logout-btn">logout</button>
-    </div>
-    <!--information tab-->
-
-    <!--backgorund animation-->
-    <div class="background">
-        <div class="stars"></div>
-        <div class="twinkling"></div>
-    </div>
-    <!--background animation-->
+    <div id="topbar"></div>
 
     <!--container-->
     <div class="container">
@@ -80,7 +50,6 @@
     </div>
 
     <!--javascript-->
-    <script src="information_bar_script.js"></script>
     <script src="payment_countdown.js"></script>
     <!--javascript-->
 </body>

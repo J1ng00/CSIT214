@@ -1,4 +1,4 @@
-const profileBtn = document.querySelector(".profile-btn");
+/*const profileBtn = document.querySelector(".profile-btn");
 
 function openSidebar() {
     document.querySelector(".sidebar").style.left = "0";
@@ -35,12 +35,9 @@ document.addEventListener("click", (e)=> {
     if (e.target!= addProfileOpenBtn && !addProfileContainer.contains(e.target)){
         addProfileContainer.classList.remove("active");
     }
-})
+})*/
 
 //logoutbutton
-function logout(){
-    window.location.href = "index.html";
-}
 
 //calendar function
 const calendar = document.querySelector(".calendar"),
@@ -219,7 +216,7 @@ function gotoDate(){
 
 const addEventBtn = document.querySelector(".add-event"),
     addEventContainer = document.querySelector(".add-event-wrapper"),
-    addEventCloseBtn = document.querySelector(".close"),
+    //addEventCloseBtn = document.querySelector(".close"),
     addEventTitle = document.querySelector(".event-name"),
     addEventFrom = document.querySelector(".event-time-from"),
     addEventTo = document.querySelector(".event-time-to");
@@ -228,9 +225,11 @@ addEventBtn.addEventListener("click", ()=> {
     addEventContainer.classList.toggle("active");
 })
 
+/*
 addEventCloseBtn.addEventListener("click", ()=>{
     addEventContainer.classList.remove("active");
 });
+*/
 
 document.addEventListener("click", (e)=> {
     //if click outside

@@ -1,19 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
 .calendar {
     position: relative;
-    max-width: 70vh;
     width: 100%;
     height: 100%;
+    display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
-    border-radius: 5px;
-    background-color: var(--calenderbackground-clr);
+    border-radius: 10px;
+    background-color: var(--calendarbackground-clr);
+    color: var(--calendartext-clr)
 }
 
 /* Styles for .calendar::before and .calendar::after */
@@ -26,19 +21,19 @@
     width: 12px;
     height: 97%;
     border-radius: 0 5px 5px 0;
-    background-color: var(--calenderbackground2-clr);
+    background-color: var(--calendarbackground2-clr);
     transform: translateY(-50%);
 }
 
 .calendar::before {
     height: 94%;
     left: calc(100% + 12px);
-    background-color: var(--calenderbackground3-clr);
+    background-color: var(--calendarbackground3-clr);
 }
 
 /* Styles for .calendar .month */
 .calendar .month {
-    width: 100%;
+    width: 90%;
     height: 150px;
     display: flex;
     align-items: center;
@@ -51,8 +46,7 @@
 
 .calendar .month .prev,
 .calendar .month .next {
-    background-color: var(--calenderbackground-clr);
-    border: none;
+    cursor: pointer;
 }
 
 .calendar .month .prev:hover,
@@ -60,10 +54,9 @@
     color: var(--primary-clr);
 }
 
-
 /* Styles for .calendar .weekdays */
 .calendar .weekdays {
-    width: 100%;
+    width: 90%;
     height: 100px;
     display: flex;
     align-items: center;
@@ -73,6 +66,7 @@
     font-weight: 500;
     text-transform: capitalize;
 }
+
 
 /* Styles for .calendar .weekdays div */
 .calendar .weekdays div {
@@ -85,7 +79,7 @@
 
 /* Styles for .calendar .days */
 .calendar .days {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -104,13 +98,15 @@
     justify-content: center;
     cursor: pointer;
     color: var(--primary-clr);
-    border: 1px solid var(--border-clr);
-    border-radius: 5px;
-    transition: all 300ms ease;
+    border: 1px solid #d4d0d0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 200ms;
 }
 
 .calendar .day:not(.prev-date, .next-date):hover {
-    color: var(--calenderbackground-clr);
+    color: var(--calendarbackground-clr);
     background-color: var(--primary-clr);
 }
 
@@ -121,9 +117,8 @@
 
 .calendar .days .active {
     position: relative;
-    font-size: 2rem;
-    color: var(--calenderbackground-clr);
-    ;
+    font-size: 1rem;
+    color: var(--calendarbackground-clr);
     background-color: var(--primary-clr);
 }
 
@@ -138,7 +133,9 @@
 }
 
 .calendar .days .today {
-    font-size: 2rem;
+    font-size: 1rem;
+    border: 2px solid var(--primary-clr);
+    border-radius: 10%;
 }
 
 .calendar .days .event {
@@ -158,13 +155,12 @@
 }
 
 .calendar .event:hover::after {
-    background-color: var(--calenderbackground-clr);
+    background-color: var(--calendarbackground-clr);
     ;
 }
 
 .calendar .active.event::after {
-    background-color: var(--calenderbackground-clr);
-    ;
+    background-color: var(--calendarbackground-clr);
     bottom: 20%;
 }
 
@@ -173,7 +169,7 @@
 }
 
 .calendar .goto-today {
-    width: 100%;
+    width: 90%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -193,7 +189,7 @@
 }
 
 .calendar .goto-today .goto input {
-    width: 100%;
+    width: 90%;
     height: 30px;
     outline: none;
     border: none;
@@ -214,8 +210,7 @@
 }
 
 .calendar .goto-today button:hover {
-    color: var(--calenderbackground-clr);
-    ;
+    color: var(--calendarbackground-clr);
     background-color: var(--primary-clr);
 }
 
