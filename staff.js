@@ -232,52 +232,6 @@ addEventTitle.addEventListener("input", (e)=>{
     addEventTitle.value - addEventTitle.value.slice(0,50);
 });
 
-//time format in from and to time
-
-//from time
-addEventFrom.addEventListener("input", (e)=>{
-    //remove anything else except numbers
-    addEventFrom.value = addEventFrom.value.replace(/[^0-9:]/g, "")
-    
-    //if two numbers entered auto add:
-    if( addEventFrom.value.length == 2){
-        addEventFrom.value += ":";
-    }
-    //dont let user enter more than 5 characters
-    if(addEventFrom.value.length >5){ 
-        addEventFrom.value = addEventFrom.value.slice(0, 5);
-    }
-
-    //if user backspace and delete 
-    if (e.inputType === "deleteContentBackward") {
-        if (addEventFrom.value.length === 3) {
-            addEventFrom.value = addEventFrom.value.slice(0, 2);
-        }
-    }
-});
-
-//to time
-addEventTo.addEventListener("input", (e)=>{
-    //remove anything else except numbers
-    addEventTo.value = addEventTo.value.replace(/[^0-9:]/g, "")
-    
-    //if two numbers entered auto add:
-    if( addEventTo.value.length == 2){
-        addEventTo.value += ":";
-    }
-    //dont let user enter more than 5 characters
-    if(addEventTo.value.length >5){
-        addEventTo.value = addEventTo.value.slice(0, 5);
-    }
-
-    //if user backspace and delete 
-    if (e.inputType === "deleteContentBackward") {
-        if (addEventTo.value.length === 3) {
-            addEventTo.value = addEventTo.value.slice(0, 2);
-        }
-    }
-});
-
 //function to add listner on days after rendered
 
 function addListner() {
@@ -356,15 +310,20 @@ function updateEvents(date) {
             //then show event on document
             event.events.forEach((event) => { 
                 events +=
-                `<div class="event">
-                    <div class="title">
-                         <i class="fas fa-circle"></i>
-                        <h3 class="event-title">${event.title}</h3>
-                     </div>
+            `<div class="event">
+                <div class="title">
+                    <i class="fas fa-circle"></i>
+                    <h3 class="event-title">${event.title}</h3>
+                </div>
+                <div class="event-info">
                     <div class="event-time">
-                         <span class="event-time">${event.time}</span>
+                        <span>${event.time}</span>
                     </div>
-                </div>`;
+                    <div class="event-price">
+                        <span>${event.price}</span>
+                    </div>
+                </div>
+            </div>`;
             });
         }
     });
@@ -409,10 +368,12 @@ addEventSubmit.addEventListener("click", () => {
 
     const timeFrom = convertTime(eventTimeFrom);
     const timeTo = convertTime(eventTimeTo);
+    const roomPrice = document.querySelector(".roomPrice").value;
 
     const newEvent = {
         title : eventTitle,
         time : timeFrom + " - " + timeTo,
+        price : "$" + roomPrice,
     };
 
     let eventAdded = false;
