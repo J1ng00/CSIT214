@@ -26,52 +26,6 @@ body {
 
 /* end of top bar */
 
-/* side bar button*/
-.tab-btn {
-    cursor: pointer;
-    position: relative;
-    padding: 5px 10px;
-    margin-left: 5px;
-    font-size: 18px;
-    color: rgb(193, 163, 98);
-    border: 2px solid rgb(193, 163, 98);
-    border-radius: 34px;
-    background-color: transparent;
-    font-weight: 600;
-    -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-    overflow: hidden;
-}
-
-.tab-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    border-radius: inherit;
-    scale: 0;
-    z-index: -1;
-    background-color: rgb(193, 163, 98);
-    -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.tab-btn:hover::before {
-    scale: 3;
-}
-
-.tab-btn:hover {
-    color: #212121;
-    scale: 1.1;
-    -webkit-box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
-    box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
-}
-
-.tab-btn:active {
-    scale: 1;
-}
-/* end of side bar button*/
-
 /* profile button */
 
 .profile-btn {
@@ -118,85 +72,7 @@ body {
     scale: 1;
 }
 /*end of profile button */
-
-/* side bar*/
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -300px;
-    /* Initially hide the sidebar off-screen */
-    width: 250px;
-    height: 100%;
-    background-color: #3a3a3a;
-    color: #fff;
-    padding: 0px;
-    transition: left 0.3s ease;
-    z-index: 2;
-    /* Smooth transition when opening/closing */
-}
-
-.sidebar .content {
-    margin-left: 0;
-    /* Ensure content starts after sidebar */
-    transition: margin-left 0.3s ease;
-    /* Smooth transition when opening/closing */
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 25px;
-}
-
-.sidebar ul a {
-    text-decoration: none; /* Remove underline */
-}
-
-.sidebar ul li {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px 15px;
-    margin-right: 5px;
-    border-radius: 5px;
-    transition: background-color 300ms;
-    cursor: pointer;
-}
-
-/*change color when hover onto it*/
-.sidebar ul li:hover {
-    background-color: #646464;
-    transition: 100ms;
-}
-
-/*animation when clicking(<li> part)*/
-.sidebar ul li:active {
-    background-color: #919191;
-    transition: background-color 100ms;
-}
-
-/*animation when clicking(<a> part)*/
-.sidebar ul li:active a {
-    color: #3a3a3a;
-    transition: 100ms;
-}
-
-/*topbar style*/
-.sidebar .sidebartopbar {
-    display: flex;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 2px solid rgb(193, 163, 98);
-}
-
-.sidebar .sidebartitle {
-    color: #ffffff;
-    margin: 0;
-    margin-left: 10px;
-    text-align: center;
-}
-
-/*end of side bar*/
+/* Profile Container */ 
 
 .profileContainer {
     position: absolute;
@@ -666,7 +542,7 @@ body {
 
 .add-event-wrapper {
     position: absolute;
-    bottom: 100px;
+    bottom: 140px;
     left: 50%;
     width: 90%;
     max-height: 0;
@@ -695,6 +571,8 @@ body {
 .add-event-header .off{
     font-size: 1.5rem;
     cursor: pointer;
+    position: absolute;
+    right: 10px;
 }
 
 .add-event-header .off:hover{
@@ -754,6 +632,33 @@ body {
     padding: 20px;
 }
 
+/* add event button */
+
+.add-event:hover{
+    color: var(--primary-clr);
+    border-color: var(--primary-clr);
+    background-color: transparent;
+    opacity: 1;
+}
+
+.add-event{
+    position: absolute;
+    bottom: 45px;
+    right: 30px;
+    width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #373c4f;
+    border: 2px solid #373c4f;
+    opacity: 0.5;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .add-event-btn{
     height: 40px;
     font-size: 1rem;
@@ -771,30 +676,4 @@ body {
 .add-event-btn:hover{
     color: var(--primary-clr);
     background-color: transparent;
-}
-
-.add-event{
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    color: #373c4f;
-    border: 2px solid #373c4f;
-    opacity: 0.5;
-    border-radius: 50%;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.add-event:hover{
-    opacity: 1;
-}
-
-.add-event i{
-    pointer-events: none;
 }

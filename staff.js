@@ -1,15 +1,3 @@
-const profileBtn = document.querySelector(".profile-btn");
-
-function openSidebar() {
-    document.querySelector(".sidebar").style.left = "0";
-    document.querySelector(".sidebar").style.marginLeft = "0px"; //
-}
-
-function closeSidebar() {
-    document.querySelector(".sidebar").style.left = "-300px";
-    document.querySelector(".sidebar").style.marginLeft = "0"; //
-}
-
 //profile button
 const addProfileContainer = document.querySelector(".profileContainer"),
     addProfileCloseBtn = document.querySelector(".close"),
@@ -104,7 +92,7 @@ let eventsArr = [];
                if(i === new Date().getDate() && year === new Date().getFullYear() && month === new Date().getMonth()) {
 
                     activeDay = i;
-                    //getActiveDay(i); //update later
+                    getActiveDay(i);
                     //updateEvents(i);
 
                     //if event found also add event class
@@ -219,7 +207,7 @@ function gotoDate(){
 
 const addEventBtn = document.querySelector(".add-event"),
     addEventContainer = document.querySelector(".add-event-wrapper"),
-    addEventCloseBtn = document.querySelector(".close"),
+    addEventCloseBtn = document.querySelector(".off"),
     addEventTitle = document.querySelector(".event-name"),
     addEventFrom = document.querySelector(".event-time-from"),
     addEventTo = document.querySelector(".event-time-to");
