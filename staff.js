@@ -100,7 +100,7 @@ function initCalendar() {
         if (i === new Date().getDate() && year === new Date().getFullYear() && month === new Date().getMonth()) {
 
             activeDay = i;
-            //getActiveDay(i); //update later
+            getActiveDay(i); //update later
             //updateEvents(i);
 
             //if event found also add event class
