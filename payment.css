@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    min-width: 50vh;
+}
+
+.payment {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;
+    background-color: white;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.payment::before,
+.payment::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 12px;
+    height: 97%;
+    border-radius: 0 5px 5px 0;
+    background-color: var(--calenderbackground2-clr);
+    transform: translateY(-50%);
+}
+
+.payment::before {
+    height: 94%;
+    left: calc(100% + 12px);
+    background-color: var(--calenderbackground3-clr);
+}
+
+.payment label {
+    margin: 5px;
+}
+
+.payment .instruction {
+    font-weight: bold;
+    font-size: large;
+    color: rgb(255, 0, 0);
+}
+
+.payment .QRimg {
+    display: flex;
+    max-width: 40vh;
+    width: 100%;
+}
+
+.payment .cancel-btn {
+    padding: 5px 10px;
+}

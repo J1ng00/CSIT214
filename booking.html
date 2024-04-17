@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RBS</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!--other source(calander box)-->
+    <link rel="stylesheet" href="calender.css">
+    <!--other source(calander box)-->
+    <!--CSS-->
+
+    <!--other source & not local(calander box)-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--other source & not local(calander box)-->
+</head>
+
+<body>
+    <!--topbar-->
+    <div class="top-bar">
+        <button class="tab-btn" onclick="openSidebar()">
+            <span>&#9776;</span> <!-- Hamburger icon -->
+        </button>
+        <h2 class="top-border-text">Student Center</h2>
+    </div>
+    <!--topbar-->
+
+    <!--sidebar-->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebartopbar">
+            <button class="tab-btn" onclick="closeSidebar()">
+                <span>&#9776;</span> <!-- Hamburger icon -->
+            </button>
+            <h2 class="sidebartitle">SideBar</h2>
+        </div>
+        <ul>
+            <a href="../student.html">
+                <li>student</li>
+            </a>
+            <a href="../payment.html">
+                <li>payment</li>
+            </a>
+            <a href="../staff.html">
+                <li>staff</li>
+            </a>
+            <a href="../index.html">
+                <li>index</li>
+            </a>
+            <!-- Add more links or content as needed -->
+        </ul>
+    </div>
+    <!--sidebar-->
+
+    <!--container-->
+    <div class="right-window">
+        <label class="details">Room ID:
+            <select>
+                <option></option>
+                <option>B4.17</option>
+                <option>B4.17</option>
+                <option>B4.17</option>
+                <option>B4.17</option>
+            </select>
+        </label>
+        <label class="details">Room Type:<select>
+                <option></option>
+                <option>Lecture Theatre</option>
+                <option>LAB</option>
+            </select></label>
+        <label class="details">Booking Date: <input type="text" id="datepicker" readonly></label>
+        <label class="details">Booking Time:
+            <!--checkbox for time selection-->
+            <div class="time-selection">
+                <input type="checkbox" class="timecheckbox" id="0800" disabled />
+                <label for="0800" class="checkbox-switch">0800</label>
+                <input type="checkbox" class="timecheckbox" id="0900" />
+                <label for="0900" class="checkbox-switch">0900</label>
+                <input type="checkbox" class="timecheckbox" id="1000" />
+                <label for="1000" class="checkbox-switch">1000</label>
+                <input type="checkbox" class="timecheckbox" id="1100" />
+                <label for="1100" class="checkbox-switch">1100</label>
+                <input type="checkbox" class="timecheckbox" id="1200" />
+                <label for="1200" class="checkbox-switch">1200</label>
+                <input type="checkbox" class="timecheckbox" id="1300" disabled />
+                <label for="1300" class="checkbox-switch">1300</label>
+                <input type="checkbox" class="timecheckbox" id="1400" />
+                <label for="1400" class="checkbox-switch">1400</label>
+                <input type="checkbox" class="timecheckbox" id="1500" />
+                <label for="1500" class="checkbox-switch">1500</label>
+                <input type="checkbox" class="timecheckbox" id="1600" />
+                <label for="1600" class="checkbox-switch">1600</label>
+                <input type="checkbox" class="timecheckbox" id="1700" />
+                <label for="1700" class="checkbox-switch">1700</label>
+                <input type="checkbox" class="timecheckbox" id="1800" />
+                <label for="1800" class="checkbox-switch">1800</label>
+                <input type="checkbox" class="timecheckbox" id="1900" />
+                <label for="1900" class="checkbox-switch">1900</label>
+                <input type="checkbox" class="timecheckbox" id="2000" />
+                <label for="2000" class="checkbox-switch">2000</label>
+                <input type="checkbox" class="timecheckbox" id="2100" />
+                <label for="2100" class="checkbox-switch">2100</label>
+                <input type="checkbox" class="timecheckbox" id="2200" />
+                <label for="2200" class="checkbox-switch">2200</label>
+            </div>
+            <!--checkbox for time selection-->
+        </label>
+        <label class="details">Purpose:</label>
+        <textarea type="text" class="purpose_input"></textarea>
+        <label class="details">Cost:<span>$10</span></label>
+        <a href="../payment.html"><button class="click-btn">Book now</button></a>
+    </div>
+    <!--container-->
+
+    <!--javascript-->
+    <script src="sidebar_script.js"></script>
+    <!--other source(calender box)-->
+    <script src="calender_script.js"></script>
+    <!--other source(calender box)-->
+    <!--javascript-->
+</body>
+
+</html>

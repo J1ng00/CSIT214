@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RBS</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="informationtab.css">
+    <link rel="stylesheet" href="student.css">
+    <link rel="stylesheet" href="calender.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!--other source(-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--other source-->
+    <!--CSS-->
+</head>
+
+<body>
+    <!--topbar-->
+    <div class="top-bar">
+        <h2 class="top-border-text">Room Booking System</h2>
+        <buttton class="information-icon" onclick=ToggleInformationbar()>
+            <i class="fa-solid fa-user"></i></i><!--person icon-->
+        </buttton>
+    </div>
+    <!--topbar-->
+
+    <!--information tab-->
+    <div class="information-bar" id="information_bar">
+        <h4 class="information-bar-title">ABC</h4>
+        <ul>
+            <a href="../student.html">
+                <li>student</li>
+            </a>
+            <a href="../payment.html">
+                <li>payment</li>
+            </a>
+            <a href="../staff.html">
+                <li>staff</li>
+            </a>
+            <a href="../index.html">
+                <li>index</li>
+            </a>
+            <!-- Add more links or content as needed -->
+        </ul>
+        <button class="logout-btn">logout</button>
+    </div>
+    <!--information tab-->
+
+    <!--backgorund animation-->
+    <div class="background">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+    </div>  
+    <!--background animation-->
+
+    <!--container-->
+    <div class="container">
+        <!--left section-->
+        <div class="left-window">
+            <div class="calendar">
+                <div class="month">
+                    <button class="fa fa-angle-left prev"></button>
+                    <div class="date"> </div>
+                    <button class="fa fa-angle-right next"></button>
+                </div>
+                <div class="weekdays">
+                    <div>sun</div>
+                    <div>mon</div>
+                    <div>tue</div>
+                    <div>wed</div>
+                    <div>thu</div>
+                    <div>fri</div>
+                    <div>sat</div>
+                </div>
+                <div class="days"></div>
+                <!-- added using JS-->
+                <div class="goto-today">
+                    <div class="goto">
+                        <input type="text" placeholder="mm/yyyy" class="date-input">
+                        <button class="goto-btn">go</button>
+                    </div>
+                    <button class="today-btn">today</button>
+                </div>
+            </div>
+        </div>
+        <!--left section-->
+
+        <!--right section-->
+        <div class="right-window">
+            <div class="right-top">
+                <h2>Available Room</h2>
+                <form>
+                    <h4>Lecture Theatre</h4>
+                    <div class="available-room-section">
+                        <input class="selection-btn" type="radio" id="A1" name="room" disabled />
+                        <label class="selection-switch" for="A1">A1</label><br>
+                        <input class="selection-btn" type="radio" id="A2" name="room">
+                        <label class="selection-switch" for="A2">A2</label><br>
+                        <input class="selection-btn" type="radio" id="B1" name="room">
+                        <label class="selection-switch" for="B1">B1</label><br>
+                    </div>
+                    <h4>Lab</h4>
+                    <div class="available-room-section">
+                        <input class="selection-btn" type="radio" id="L1" name="room">
+                        <label class="selection-switch" for="L1">L1</label><br>
+                        <input class="selection-btn" type="radio" id="L2" name="room" disabled />
+                        <label class="selection-switch" for="L2">L2</label><br>
+                        <input class="selection-btn" type="radio" id="L3" name="room">
+                        <label class="selection-switch" for="L3">L3</label><br>
+                    </div>
+                </form>
+            </div>
+            <!--right-bottom-->
+            <div class="right-bottom">
+                <label class="details">Booking Date: <span>16 April 2024</label>
+                <label class="details">Booking Time:
+                    <!--checkbox for time selection-->
+                    <div class="time-selection">
+                        <input type="checkbox" class="timecheckbox" id="0800" disabled />
+                        <label for="0800" class="checkbox-switch">0800</label>
+                        <input type="checkbox" class="timecheckbox" id="0900" />
+                        <label for="0900" class="checkbox-switch">0900</label>
+                        <input type="checkbox" class="timecheckbox" id="1000" />
+                        <label for="1000" class="checkbox-switch">1000</label>
+                        <input type="checkbox" class="timecheckbox" id="1100" />
+                        <label for="1100" class="checkbox-switch">1100</label>
+                        <input type="checkbox" class="timecheckbox" id="1200" />
+                        <label for="1200" class="checkbox-switch">1200</label>
+                        <input type="checkbox" class="timecheckbox" id="1300" disabled />
+                        <label for="1300" class="checkbox-switch">1300</label>
+                        <input type="checkbox" class="timecheckbox" id="1400" />
+                        <label for="1400" class="checkbox-switch">1400</label>
+                        <input type="checkbox" class="timecheckbox" id="1500" />
+                        <label for="1500" class="checkbox-switch">1500</label>
+                        <input type="checkbox" class="timecheckbox" id="1600" />
+                        <label for="1600" class="checkbox-switch">1600</label>
+                        <input type="checkbox" class="timecheckbox" id="1700" />
+                        <label for="1700" class="checkbox-switch">1700</label>
+                        <input type="checkbox" class="timecheckbox" id="1800" />
+                        <label for="1800" class="checkbox-switch">1800</label>
+                        <input type="checkbox" class="timecheckbox" id="1900" />
+                        <label for="1900" class="checkbox-switch">1900</label>
+                        <input type="checkbox" class="timecheckbox" id="2000" />
+                        <label for="2000" class="checkbox-switch">2000</label>
+                        <input type="checkbox" class="timecheckbox" id="2100" />
+                        <label for="2100" class="checkbox-switch">2100</label>
+                        <input type="checkbox" class="timecheckbox" id="2200" />
+                        <label for="2200" class="checkbox-switch">2200</label>
+                    </div>
+                    <!--checkbox for time selection-->
+                </label>
+                <label class="details">Purpose:</label>
+                <textarea type="text" class="purpose_input"></textarea>
+                <label class="details">Cost:<span>$10</span></label>
+                <a href="../payment.html"><button class="click-btn">Book now</button></a>
+            </div>
+            <!--right bottom-->
+        </div>
+        <!--right section-->
+    </div>
+    <!--container-->
+
+    <!--javascript-->
+    <script src="information_bar_script.js"></script>
+    <script src="staff.js"> </script>
+    <!--javascript-->
+</body>
+
+</html>
