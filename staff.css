@@ -1,3 +1,7 @@
+.container{
+    height: 890px;
+}
+
 .container .left {
     flex: 1;
 }
@@ -149,7 +153,7 @@
 .add-event-wrapper {
     position: absolute;
     left: 75%;
-    bottom: 100px;
+    bottom: 50px;
     width: 40%;
     max-height: 0;
     overflow: hidden;
@@ -339,7 +343,7 @@
 
 .add-event {
     position: absolute;
-    bottom: 45px;
+    bottom: 0px;
     right: 30px;
     width: 80px;
     height: 40px;
@@ -363,4 +367,15 @@
 
 .add-event i {
     pointer-events: none;
+}
+
+.add-event-header .off{
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+.add-event-header .off:hover{
+    color: var(--primary-clr);
 }

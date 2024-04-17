@@ -215,7 +215,7 @@ function gotoDate() {
 
 const addEventBtn = document.querySelector(".add-event"),
     addEventContainer = document.querySelector(".add-event-wrapper"),
-    //addEventCloseBtn = document.querySelector(".close"),
+    addEventCloseBtn = document.querySelector(".off"),
     addEventTitle = document.querySelector(".event-name"),
     addEventFrom = document.querySelector(".event-time-from"),
     addEventTo = document.querySelector(".event-time-to");
@@ -224,11 +224,10 @@ addEventBtn.addEventListener("click", () => {
     addEventContainer.classList.toggle("active");
 })
 
-/*
+
 addEventCloseBtn.addEventListener("click", ()=>{
     addEventContainer.classList.remove("active");
 });
-*/
 
 document.addEventListener("click", (e) => {
     //if click outside

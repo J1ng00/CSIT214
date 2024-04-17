@@ -52,6 +52,7 @@ a {
     padding: 5px;
     color: #fff;
     border-radius: 10px;
+    position: relative;
 }
 
 .container .left {

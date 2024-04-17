@@ -1,39 +1,19 @@
 .calendar {
     position: relative;
-    width: 100%;
+    width:100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-radius: 10px;
-    background-color: var(--calendarbackground-clr);
-    color: var(--calendartext-clr)
-}
-
-/* Styles for .calendar::before and .calendar::after */
-.calendar::before,
-.calendar::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width: 12px;
-    height: 97%;
-    border-radius: 0 5px 5px 0;
-    background-color: var(--calendarbackground2-clr);
-    transform: translateY(-50%);
-}
-
-.calendar::before {
-    height: 94%;
-    left: calc(100% + 12px);
-    background-color: var(--calendarbackground3-clr);
+    color: #878895;
+    border-radius: 5px;
+    background-color: #fff;
 }
 
 /* Styles for .calendar .month */
 .calendar .month {
-    width: 90%;
+    width: 80%;
     height: 150px;
     display: flex;
     align-items: center;
