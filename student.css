@@ -3,18 +3,124 @@
 }
 
 .container .right {
-    flex: 1;
-    min-height: 90%;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
     background-color: var(--primary-clr);
+    padding: 0px;
+    flex: 1;
+    min-height: 85%;
+    /* Adjust as needed */
+    border-radius: 10px;
     margin: 20px;
+    padding: 20px;
+    position: relative;
+    /* Add this to make the child element's height relative to this container */
+}
+
+.container .right .events {
+    display: flex;
+    /* Use flexbox to control the layout */
+    flex-direction: column;
+    color: var(--text-clr);
+    background-color: var(--calendarbackground-clr);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0;
+    margin-right: 5px;
+    ;
+    height: 80vh;
+    width: 95%;
+    /* Make the height of the events container 100% of its parent container */
+}
+
+.container .right .events .events-container {
+    flex: 1;
+    /* Fill the remaining space */
+    overflow-y: auto;
+}
+
+.container .right .events h2 {
+    margin: 0px;
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.container .right .events .event-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .right .events .event-details .title {
+    font-size: large;
+}
+
+.container .right .events .event-details .detail {
+    font-size: small;
+}
+
+.booking-container {
+    position: absolute;
+    padding: 10px;
+    right: 15px;
+    /* Initially hide the sidebar off-screen */
+    width: 0%;
+    height: 80vh;
+    background-color: var(--bookingcontainer-clr);
+    border-radius: 10px;
+    overflow-x: hidden;
+    transition: width 500ms ease-in-out;
+    z-index: 2;
+    /* Smooth transition when opening/closing */
+}
+
+.booking-container h4 {
+    padding: 0px;
+    margin: 5px;
+    width: 200px;
+    color: var(--text-clr);
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-container .time-container {
+    background-color: white;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    height: 15%;
+}
+
+.booking-container .time-container .selection-container {
+    height: 70%;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.booking-container .purpose-container {
+    background-color: white;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    height: 25%;
+}
+
+.booking-container .purpose-container .purpose-input {
+    resize: none;
+    width: calc(100% - 5px);
+    height: calc(100% - 35px);
+    overflow-y: scroll;
+}
+
+.booking-container .book-btn {
+    position: absolute;
+    bottom: 10px;
+    left: calc(100% - 180px);
 }
 
 @media (max-width: 800px) {
-    .container {
-        margin: 30px 0px;
-    }
-
     .container .right {
         display: none;
     }

@@ -1,3 +1,51 @@
+/*----------event-btn Animation----------*/
+.event-btn {
+    display: flex;
+    align-items: center;
+    min-height: 45px;
+    padding: 5px 10px;
+    margin: 5px;
+    margin-top: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #5c5f6b3a, transparent);
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    transition: all 0.5s ease;
+}
+
+.event-btn:before {
+    content: "\2022";
+    /* Unicode character for a bullet point */
+    margin-right: 5px;
+    /* Adjust spacing between dot and label text */
+    color: var(--primary-clr);
+    font-size: 1.5rem;
+    transition: all 0.5s ease;
+}
+
+.event-btn:hover {
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, var(--primary-clr), transparent);
+    box-shadow: var(--primaryshadow-clr) 0px 7px 29px 0px;
+    color: hsl(0, 0%, 100%);
+}
+
+.event-btn:hover::before {
+    color: hsl(0, 0%, 100%);
+}
+
+.event-btn:active {
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--primary-clr), transparent);
+    color: hsl(0, 0%, 100%);
+    box-shadow: var(--primaryshadow-clr) 0px 0px 0px 0px;
+    transform: translateY(2px);
+    transition: 100ms;
+}
+
+/*----------event-btn Animation----------*/
+
 /*----------click-btn Animation----------*/
 .click-btn {
     padding: 5px 10px;
@@ -28,6 +76,63 @@
 }
 
 /*----------click-btn Animation----------*/
+
+/*----------book-btn Animation----------*/
+.book-btn {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    font-size: 1.5rem;
+    padding: 10px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    color: #fff;
+    border: none;
+    z-index: 1;
+    border-radius: 10px;
+    height: 40px;
+    width: 135px;
+    font-size: large;
+    cursor: pointer;
+    background-color: var(--primary-clr);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+    overflow-y: hidden;
+}
+
+.book-btn::before {
+    content: ">>";
+    align-content: center;
+    text-align: right;
+    font-size: 1.5rem;
+    background-color: rgb(216, 216, 24);
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -30px;
+    z-index: -1;
+    transition: width 500ms ease-in-out;
+    display: inline-block;
+}
+
+.book-btn:hover {
+    letter-spacing: 3px;
+    width: 170px;
+    color: black;
+}
+
+.book-btn:hover::before {
+    width: 200px;
+}
+
+.book-btn:active {
+    transform: translateY(5px);
+    transition: 100ms;
+}
+
+/*----------book-btn Animation----------*/
 
 /*----------logout-btn Animation----------*/
 .logout-btn {
@@ -72,7 +177,7 @@
     transition: 100ms;
 }
 
-/*----------click-btn Animation----------*/
+/*----------event-btn Animation----------*/
 
 /*----------selection radio animation----------*/
 .radiobtn-label {
@@ -117,9 +222,10 @@
 
 /*----------checkbox animation----------*/
 .checkbox-label {
+    position: relative;
     display: inline-block;
     width: fit-content;
-    margin-top: 10px;
+    margin: 1px;
     padding: 10px 20px;
     background-color: rgb(46, 46, 46);
     border-radius: 50px;

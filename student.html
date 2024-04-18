@@ -64,13 +64,73 @@
 
         <!--right section-->
         <div class="right">
+            <!--event viewer-->
+            <div class="events">
+                <h2>Events</h2>
+                <div class="events-container">
+                    <div class="event-btn" onclick="toggleBooking()">
+                        <div class="event-details">
+                            <label class="title">Event 1</label>
+                            <label class="detail">12:00AM - 12:00PM</label>
+                            <label class="detail">Cost: 100</label>
+                        </div>
+                    </div>
+                    <div class="event-btn" onclick="toggleBooking()">
+                        <div class="event-details">
+                            <label class="title">Event 1</label>
+                            <label class="detail">12:00AM - 12:00PM</label>
+                            <label class="detail">Cost: 100</label>
+                        </div>
+                    </div>
+                    <div class="event-btn" onclick="toggleBooking()">
+                        <div class="event-details">
+                            <label class="title">Event 1</label>
+                            <label class="detail">12:00AM - 12:00PM</label>
+                            <label class="detail">Cost: 100</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--event viewer-->
+
+            <!--booking container-->
+            <div class="booking-container" id="booking_container">
+                <!--time container-->
+                <div class="time-container">
+                    <h4>Available time</h4>
+                    <div class="selection-container">
+                        <div class="time-selection">
+                            <input type="checkbox" class="checkbox" id="0800">
+                            <label for="0800" class="checkbox-label">0800</label>
+                            <input type="checkbox" class="checkbox" id="0830">
+                            <label for="0830" class="checkbox-label">0830</label>
+                            <input type="checkbox" class="checkbox" id="0900">
+                            <label for="0900" class="checkbox-label">0900</label>
+                            <input type="checkbox" class="checkbox" id="0930">
+                            <label for="0930" class="checkbox-label">0930</label>
+                        </div>
+                    </div>
+                </div>
+                <!--time container-->
+
+                <!--purpose container-->
+                <div class="purpose-container">
+                    <h4>Booking purpose</h4>
+                    <textarea type="text" class="purpose-input"></textarea>
+                </div>
+                <!--purpose container-->
+
+                <button class="book-btn" onclick="gotopayment()">Book Now</button>
+            </div>
+            <!--booking container-->
         </div>
         <!--right section-->
     </div>
     <!--container-->
 
     <!--javascript-->
-    <script src="calendar.js"> </script>
+    <script src="calendar.js"></script>
+    <script src="booking.js"></script>
     <!--javascript-->
 </body>
 

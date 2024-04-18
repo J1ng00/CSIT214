@@ -1,6 +1,8 @@
 :root {
     --primary-clr: #b38add;
     --primaryshadow-clr: rgba(170, 88, 156, 0.151);
+    --bookingcontainer-clr: #683997;
+    --text-clr: rgb(68, 68, 68);
     --container-clr: #373c4f;
     --body-clr: #e2e1dc;
     --calendarbackground-clr: #fff;
@@ -59,5 +61,4 @@ a {
     min-height: 850px;
     color: #fff;
     padding: 20px;
-    margin-right: 10px;
 }
