@@ -1,44 +1,3 @@
-/*const profileBtn = document.querySelector(".profile-btn");
-
-function openSidebar() {
-    document.querySelector(".sidebar").style.left = "0";
-    document.querySelector(".sidebar").style.marginLeft = "0px"; //
-}
-
-function closeSidebar() {
-    document.querySelector(".sidebar").style.left = "-300px";
-    document.querySelector(".sidebar").style.marginLeft = "0"; //
-}
-
-//profile button
-const addProfileContainer = document.querySelector(".profileContainer"),
-    addProfileCloseBtn = document.querySelector(".close"),
-    addProfileOpenBtn = document.querySelector(".profile-btn"),
-    profileIcon = document.querySelector(".profile-btn i");
-
-profileIcon.addEventListener("click", (e) => {
-    // Stop event propagation to prevent it from reaching the document listener
-    e.stopPropagation();
-    addProfileContainer.classList.toggle("active");
-});
-
-addProfileOpenBtn.addEventListener("click", ()=> {
-    addProfileContainer.classList.toggle("active");
-})
-
-addProfileCloseBtn.addEventListener("click", ()=>{
-    addProfileContainer.classList.remove("active");
-});
-
-document.addEventListener("click", (e)=> {
-    //if click outside
-    if (e.target!= addProfileOpenBtn && !addProfileContainer.contains(e.target)){
-        addProfileContainer.classList.remove("active");
-    }
-})*/
-
-//logoutbutton
-
 //calendar function
 const calendar = document.querySelector(".calendar"),
     date = document.querySelector(".date"),
@@ -101,7 +60,7 @@ function initCalendar() {
 
             activeDay = i;
             getActiveDay(i); //update later
-            //updateEvents(i);
+            updateEvents(i);
 
             //if event found also add event class
             //add active on today at startup
@@ -301,7 +260,6 @@ function addListner() {
 }
 
 //show active day events and date at top
-
 
 function getActiveDay(date) {
     const day = new Date(year, month, date);

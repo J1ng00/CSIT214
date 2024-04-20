@@ -8,10 +8,19 @@
 
 .container .right {
     flex: 1;
-    right: 30px;
     width: 45%;
-    min-height: 100%;
-    padding: 20px 0;
+    min-height: 95.5%;
+    flex-direction: row;
+    background-color: var(--primary-clr);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.container .right .background{
+    background-color: #fff;
+    min-height: 95%;
+    border-radius: 10px;
 }
 
 .right .today-date {
@@ -23,8 +32,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    padding-left: 70px;
-    margin-top: 50px;
+    padding-left: 40px;
+    margin-top: 10px;
+    padding-top: 20px;
     margin-bottom: 20px;
     text-transform: capitalize;
 }
@@ -67,6 +77,7 @@
     color: #373c4f;
     background: linear-gradient(90deg, #5c5f6b3a, transparent);
     border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
 }
 
 .events .event:nth-child(even) {
@@ -75,12 +86,14 @@
 
 .events .event:hover {
     background: linear-gradient(90deg, var(--primary-clr), transparent);
+    transition: all 0.5s ease;
 }
 
 .events .event .title {
     display: flex;
     align-items: center;
     pointer-events: none;
+    margin-top: -15;
 }
 
 .events .event .title .event-title {
@@ -100,6 +113,7 @@
 }
 
 .events .event:hover .title i,
+.events .event:hover .title h3,
 .events .event:hover .event-time,
 .events .event:hover .event-price {
     color: #fff;
@@ -153,7 +167,7 @@
 .add-event-wrapper {
     position: absolute;
     left: 75%;
-    bottom: 50px;
+    bottom: 55px;
     width: 40%;
     max-height: 0;
     overflow: hidden;
@@ -165,6 +179,7 @@
 
 .add-event-wrapper.active {
     max-height: 300px;
+    border: 1px solid #373c4f;
 }
 
 .add-event-header {
@@ -343,8 +358,8 @@
 
 .add-event {
     position: absolute;
-    bottom: 0px;
-    right: 30px;
+    bottom: 10px;
+    right: 55px;
     width: 80px;
     height: 40px;
     display: flex;
