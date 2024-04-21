@@ -465,9 +465,6 @@ eventsContainer.addEventListener("click", (e) => {
    
 });
 
- //after removing from array update event
- //updateEvents(activeDay); add in when remove button
-
 function convertTo24Hour(time) {
     let [timeStr, period] = time.split(" ");
     let [hours, minutes] = timeStr.split(":");
@@ -484,17 +481,33 @@ function convertTo24Hour(time) {
 }
 
 function removeListing() {
-    // Get the index of the event from the modal attribute
-    const index = parseInt(modal.getAttribute("data-event-index"));
+    const modalTitle = document.querySelector(".modal-title");
+    const eventTitle = modalTitle.textContent;
 
-    // Remove the event from eventsArr
-    if (!isNaN(index)) {
-        eventsArr.splice(index, 1);
-        // Update events after removing the listing
-        updateEvents(activeDay);
-        // Close the modal
-        modal.style.display = 'none';
-    }
+    eventsArr.forEach((event) => {
+        if (event.day == activeDay && event.month == month + 1 && event.year == year) {
+            event.events.forEach((item, index) => {
+                if (item.title == eventTitle) {
+                    event.events.splice(index, 1);
+                }
+            });
+
+            // Remove the entire day if there are no more events
+            if (event.events.length == 0) {
+                eventsArr.splice(eventsArr.indexOf(event), 1);
+                const activeDayElem = document.querySelector(".day.active");
+                if (activeDayElem.classList.contains("event")) {
+                    activeDayElem.classList.remove("event");
+                }
+            }
+        }
+    });
+
+    // Update the events display
+    updateEvents(activeDay);
+
+    // Close the modal
+    modal.style.display = 'none';
 }
 
 /*
