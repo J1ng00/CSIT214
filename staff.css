@@ -115,12 +115,14 @@
 .events .event:hover .title i,
 .events .event:hover .title h3,
 .events .event:hover .event-time,
-.events .event:hover .event-price {
+.events .event:hover .event-price,
+.events .event:hover .event-cap {
     color: #fff;
 }
 
 .events .event .event-time,
-.events .event .event-price {
+.events .event .event-price,
+.events .event .event-cap {
     font-size: 0.8rem;
     font-weight: 400;
     color: #373c4f;
@@ -131,6 +133,10 @@
 }
 
 .events .event .event-price {
+    margin-top: 5px;
+}
+
+.events .event .event-cap {
     margin-top: 5px;
 }
 
@@ -434,4 +440,83 @@
 
 .add-event-body .add-event-cap input:focus::placeholder {
     color: var(--primary-clr);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    color: black;
+  }
+  
+  /* The Close Button */
+  .modal-header .close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .modal-header .close:hover,
+  .modal-header .close:focus {
+    color: var(--primary-clr);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #fff;
+    color: black;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #fff;
+    color: black;
+  }
+
+  .removeListing-btn {
+    margin: 0px 5px 5px 5px;
+    width: calc(100% - 10px);
+    position: relative;
+    background-color: rgb(230, 34, 77);
+    border-radius: 7px;
+    box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
+    padding: 5px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 30px;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
 }
