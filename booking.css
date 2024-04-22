@@ -1,0 +1,124 @@
+.confirm-container {
+    display: none;
+    position: fixed;
+    padding: 20px;
+    z-index: 10;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.confirm-container h4 {
+    margin: 0px;
+    margin-bottom: 20px;
+    padding: 0px;
+    font-size: x-large;
+}
+
+.confirm-container .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.confirm-container .buttons .confirm-cancel-btn,
+.logout-btn {
+    flex: 1;
+}
+
+.confirm-container .buttons .confirm-cancel-btn {
+    border-radius: 10px;
+    border: 1px solid rgb(172, 172, 172);
+    transition: all 200ms;
+}
+
+.confirm-container .buttons .confirm-cancel-btn:hover {
+    background-color: rgb(172, 172, 172);
+}
+
+.confirm-container .buttons .confirm-cancel-btn:active {
+    transform: translateY(1px);
+}
+
+.container .left {
+    flex: 1;
+    background-color: var(--calendarbackground-clr);
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+    /* Ensure the position is relative */
+    border-radius: 10px;
+    height: auto;
+    min-height: 370px;
+}
+
+h2 {
+    margin: 20px;
+    font-size: xx-large;
+}
+
+.left h2 {
+    color: var(--text-clr);
+}
+
+.right h2 {
+    margin: 20px;
+    font-size: xx-large;
+    color: white;
+}
+
+.left:after {
+    content: "";
+    background-color: var(--calendarbackground3-clr);
+    position: absolute;
+    /* Set the position */
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    /* Specify top position to align with the top of .left */
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.left .bookings {
+    padding: 10px;
+    margin-top: 15px;
+    flex-direction: column;
+    color: black;
+}
+
+.right {
+    flex: 1;
+    margin: 20px;
+    padding: 15px;
+    background-color: var(--primary-clr);
+    border-radius: 10px;
+    height: auto;
+    min-height: 370px;
+    ;
+}
+
+.right .details-container {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    color: var(--text-clr);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right .details-container .detail {
+    margin: 10px;
+    font-size: large;
+}
+
+.right .details-container .title {
+    font-weight: 800;
+}

@@ -14,6 +14,7 @@ function logout(){
     window.location.href = "index.html";
 }
 
+/*----------automize information container content in different pages----------*/
 var currentPage = window.location.pathname;
 
 function generateMenu() {
@@ -23,10 +24,9 @@ function generateMenu() {
     menu.innerHTML = "";
 
     // Generate menu items based on the current page
-    if (currentPage.includes("student.html")) {
-        menu.innerHTML += '<a href="../payment.html"><li>Payment</li></a>';
-        menu.innerHTML += '<a href="../staff.html"><li>Staff</li></a>';
-        menu.innerHTML += '<a href="../index.html"><li>Index</li></a>';
+    if (currentPage.includes("student.html") || currentPage.includes("booking.html") || currentPage.includes("payment.html")) {
+        menu.innerHTML += '<a href="../student.html"><li>Home Page</li></a>';
+        menu.innerHTML += '<a href="../booking.html"><li>My Booking</li></a>';
     } else if (currentPage.includes("staff.html")) {
         menu.innerHTML += '<a href="../admin.html"><li>Admin</li></a>';
         menu.innerHTML += '<a href="../student.html"><li>Student</li></a>';
@@ -37,8 +37,9 @@ function generateMenu() {
         menu.innerHTML += '<a href="../staff.html"><li>Staff</li></a>';
         menu.innerHTML += '<a href="../payment.html"><li>Payment</li></a>';
     }
+    
 }
 
 // Call the generateMenu function when the page loads
 generateMenu();
-
+/*----------automize infromation container content in different pages----------*/

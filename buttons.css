@@ -44,6 +44,19 @@
     transition: 100ms;
 }
 
+.event-btn .event-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-btn .event-details .title {
+    font-size: large;
+}
+
+.event-btn .event-details .detail {
+    font-size: small;
+}
+
 /*----------event-btn Animation----------*/
 
 /*----------click-btn Animation----------*/
