@@ -316,7 +316,7 @@ function updateEvents(date) {
     }
     eventsContainer.innerHTML = events;
     //save events when new one added
-    //saveEvents();
+    saveEvents();
 }
 
 //function to add events
@@ -510,18 +510,5 @@ function removeListing() {
     modal.style.display = 'none';
 }
 
-/*
-//store events in local storage 
 
-function saveEvents(){ 
-    localStorage.setItem("events", JSON.stringify(eventsArr));
-}
 
-function getEvents(){
-    if(localStorage.getItem("event" != null)){
-        return;
-    }
-
-    eventsArr.push(...JSON.parse(localStorage.getItem("events")));
-}
-*/
