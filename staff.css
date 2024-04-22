@@ -184,7 +184,7 @@
 }
 
 .add-event-wrapper.active {
-    max-height: 300px;
+    max-height: 350px;
     border: 1px solid #373c4f;
 }
 

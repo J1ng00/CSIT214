@@ -79,7 +79,19 @@
                     </div>
                     <div class="add-event-time">
                         <label class="timelabel">Time From</label>
-                        <input type="time" placeholder="Event Time From" class="event-time-from"/>
+                        <select class = "FromHours">
+                            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option>
+                            <option value="4">4</option> <option value="5">5</option> <option value="6">6</option>
+                            <option value="7">7</option> <option value="8">8</option> <option value="9">9</option>
+                            <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
+                        </select>
+                        <select class = "FromTime">
+                            <option value="0">00</option> <option value="30">30</option>
+                        </select>
+                        <select class = "FromIdentifier">
+                            <option value="AM">AM</option> <option value="PM">PM</option>
+                        </select>
+                        <input type="" placeholder="Event Time From" class="event-time-from" step= "1800"/>
                         <label class="timelabel">Time To</label>
                         <input type="time" placeholder="Event Time To" class="event-time-to"/>
                     </div>

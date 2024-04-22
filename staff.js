@@ -425,8 +425,15 @@ function convertTime(time) {
     let timeHour = timeArr[0];
     let timeMin = timeArr[1];
     let timeFormat = timeHour >= 12 ? "PM" : "AM";
+    let roundedMinutes = "";
     timeHour = timeHour % 12 || 12;
-    time = timeHour + ":" + timeMin + " " + timeFormat;
+
+    if (timeMin !== "00" && timeMin !== "30") {
+        // If not, set the minutes to the nearest valid value (0 or 30)
+        roundedMinutes = parseInt(timeMin) < 30 ? "00" : "30";
+    }
+
+    time = timeHour + ":" + roundedMinutes + " " + timeFormat;
     return time;
 }
 
