@@ -379,7 +379,7 @@ function updateEvents(date) {
         const newEvent = {
             title: eventTitle,
             time: timeFrom + " - " + timeTo,
-            price: "$" + roomPrice,
+            price: "$" + roomPrice +" /30 mins",
             capacity: roomCap + "pax"
         };
 

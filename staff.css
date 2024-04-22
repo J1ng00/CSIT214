@@ -499,11 +499,14 @@
     padding: 2px 16px;
     background-color: #fff;
     color: black;
+    display: flex;
+    justify-content: center;
   }
 
-  .removeListing-btn {
+  .removeListing-btn,
+  .editListing-btn {
     margin: 0px 5px 5px 5px;
-    width: calc(100% - 10px);
+    width: 30%;
     position: relative;
     background-color: rgb(230, 34, 77);
     border-radius: 7px;
