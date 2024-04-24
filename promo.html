@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Promotions</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#topbar").load("topbar.html");
+        });
+    </script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="promo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--other source-->
+    <!--CSS-->
+</head>
+
+<body>
+    <div id="topbar"></div>
+
+    <div class="container">
+        <div class="background">
+            <div class="header"> 
+                <h2>Promotion Codes</h2>
+                <button class="add-promo">Add Promo</button>
+            </div>
+            <div class="promos">
+                <!-- added using jscript -->
+            </div>
+            <div class="add-promo-wrapper">
+                <div class="add-promo-header">
+                    <div class="title">Add Promos</div>
+                    <i class="fas fa-times off"></i>
+                </div>
+                <div class="add-promo-body">
+                    <div class="add-promo-input">
+                        <input type="text" placeholder="Promo Code" class="promo-name" />
+                    </div>
+                    <div class ="add-promo-amount">
+                        <label class="promolabel">Discount Percentage</label> 
+                        <input type="number" class="promoPercentage" step="0.01" min="0">
+                    </div>
+                </div>
+                <div class="add-promo-footer">
+                    <button class="add-promo-btn">add code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Event Details</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Title:</strong> <span class="modal-title"></span></p>
+                <p><strong>Percentage:</strong> <span class="modal-percentage"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="removeListing-btn" onclick="removeListing()">Remove Listing</button>
+            </div>
+        </div>
+    </div>
+    <script src="backend.js"></script>
+    <script src="promo.js"></script>
+</body>

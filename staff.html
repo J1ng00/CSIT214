@@ -91,9 +91,19 @@
                         <select class = "FromIdentifier">
                             <option value="AM">AM</option> <option value="PM">PM</option>
                         </select>
-                        <input type="" placeholder="Event Time From" class="event-time-from" step= "1800"/>
                         <label class="timelabel">Time To</label>
-                        <input type="time" placeholder="Event Time To" class="event-time-to"/>
+                        <select class = "ToHours">
+                            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option>
+                            <option value="4">4</option> <option value="5">5</option> <option value="6">6</option>
+                            <option value="7">7</option> <option value="8">8</option> <option value="9">9</option>
+                            <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
+                        </select>
+                        <select class = "ToTime">
+                            <option value="0">00</option> <option value="30">30</option>
+                        </select>
+                        <select class = "ToIdentifier">
+                            <option value="AM">AM</option> <option value="PM">PM</option>
+                        </select>
                     </div>
                     <div class="add-event-price"> 
                         <label class="pricelabel">Room Price "$/30 mins"</label> 
@@ -128,12 +138,62 @@
                     <p><strong>Capacity:</strong> <span class="modal-capacity"></span></p>
                 </div>
                 <div class="modal-footer">
-                    <button class="editListing-btn" onclick="">Edit Listing</button>
                     <button class="removeListing-btn" onclick="removeListing()">Remove Listing</button>
                 </div>
             </div>
         </div>
-
+        <!--          
+        <div class="edit-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close-editmodal">&times;</span>
+                    <h2>Edit Event</h2>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Title:</strong>
+                        <input type="text" placeholder="Edit Name" class="edit-name" />
+                    </p>
+                    <p><strong>Time from:</strong>
+                        <select class = "EditFromHours">
+                            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option>
+                            <option value="4">4</option> <option value="5">5</option> <option value="6">6</option>
+                            <option value="7">7</option> <option value="8">8</option> <option value="9">9</option>
+                            <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
+                        </select>
+                        <select class = "EditFromMins">
+                            <option value="0">00</option> <option value="30">30</option>
+                        </select>
+                        <select class = "EditFromIdentifier">
+                            <option value="AM">AM</option> <option value="PM">PM</option>
+                        </select>
+                    </p>
+                    <p><strong>Time from:</strong>
+                        <select class = "EditToHours">
+                            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option>
+                            <option value="4">4</option> <option value="5">5</option> <option value="6">6</option>
+                            <option value="7">7</option> <option value="8">8</option> <option value="9">9</option>
+                            <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
+                        </select>
+                        <select class = "EditToMins">
+                            <option value="0">00</option> <option value="30">30</option>
+                        </select>
+                        <select class = "EditToIdentifier">
+                            <option value="AM">AM</option> <option value="PM">PM</option>
+                        </select>
+                    </p>   
+                    <p><strong>Price:</strong>
+                        <input type="number" class="roomPrice" step="0.01" min="0">
+                    </p>
+                    <p><strong>Capacity:</strong> 
+                        <input type="number" class="capNumber" step="1" pattern="\d*">
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="confirmListing-btn" onclick="">Confirm</button>
+                </div>
+            </div>
+        </div>
+        -->
     </div>
 
     </div>

@@ -280,7 +280,9 @@
     outline: none;
     border: none;
     color: #646464;
-    align-items: center;
+    align-items:center;
+    padding-top: 15px;
+    
 }
 
 .add-event-body .add-event-time input::placeholder {
@@ -442,7 +444,8 @@
     color: var(--primary-clr);
 }
 
-.modal {
+.modal,
+.edit-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -504,7 +507,8 @@
   }
 
   .removeListing-btn,
-  .editListing-btn {
+  .editListing-btn,
+  .confirmListing-btn {
     margin: 0px 5px 5px 5px;
     width: 30%;
     position: relative;

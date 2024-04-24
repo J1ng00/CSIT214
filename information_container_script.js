@@ -28,9 +28,9 @@ function generateMenu() {
         menu.innerHTML += '<a href="../student.html"><li>Home Page</li></a>';
         menu.innerHTML += '<a href="../booking.html"><li>My Booking</li></a>';
     } else if (currentPage.includes("staff.html")) {
-        menu.innerHTML += '<a href="../admin.html"><li>Admin</li></a>';
-        menu.innerHTML += '<a href="../student.html"><li>Student</li></a>';
-        menu.innerHTML += '<a href="../index.html"><li>Index</li></a>';
+        menu.innerHTML += '<a href="../promo.html"><li>Promo</li></a>';
+    } else if (currentPage.includes("promo.html")) {
+        menu.innerHTML += '<a href="../staff.html"><li>Staff</li></a>';
     } else {
         // Default menu items for other pages
         menu.innerHTML += '<a href="../student.html"><li>Student</li></a>';

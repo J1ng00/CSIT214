@@ -1,0 +1,402 @@
+.background{
+    background-color: white;  
+    min-height: 95%;
+    border-radius: 10px;
+    flex: 1;
+    width: 90%;
+    min-height: 95.5%;
+    flex-direction: row;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    position: absolute;
+}
+
+.header{
+    color: black;
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
+
+.add-promo {
+    position: absolute;
+    right: 35px;
+    width: 150px;
+    height: 40px;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #373c4f;
+    border: 2px solid #373c4f;
+    opacity: 0.5;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.add-promo:hover {
+    opacity: 1;
+    color: var(--primary-clr);
+    border-color: var(--primary-clr);
+}
+
+.add-promo i {
+    pointer-events: none;
+}
+
+.add-promo-wrapper {
+    position: absolute;
+    left: 75%;
+    top: 90px;
+    width: 40%;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #fff;
+    transform: translateX(-50%);
+    transition: max-height 0.5s;
+}
+
+.add-promo-wrapper.active {
+    max-height: 350px;
+    border: 1px solid #373c4f;
+}
+
+.add-promo-header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: #373c4f;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+
+.add-promo-header .off{
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+.add-promo-header .off:hover{
+    color: var(--primary-clr);
+}
+
+.add-promo-header .title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.add-promo-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+}
+
+.add-promo-body .add-promo-input {
+    width: 90%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.add-promo-body .add-promo-input input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 0 10px;
+    font-weight: 400;
+    color: #373c4f;
+}
+
+.add-promo-body .add-promo-input input::placeholder {
+    color: #a5a5a5;
+}
+
+.add-promo-body .add-promo-input input:focus {
+    border-color: var(--primary-clr);
+}
+
+.add-promo-body .add-promo-input input:focus::placeholder {
+    color: var(--primary-clr);
+}
+
+.add-promo-body .add-promo-amount .promolabel {
+    width: auto;
+    height: 80%;
+    outline: none;
+    border: none;
+    color: #373c4f;
+    align-items: center;
+}
+
+.add-promo-body .add-promo-amount {
+    width: 80%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.add-promo-body .add-promo-amount input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 0 10px;
+    font-weight: 400;
+    color: #373c4f;
+}
+
+.add-promo-body .add-promo-amount input::placeholder {
+    color: #a5a5a5;
+}
+
+.add-promo-body .add-promo-amount input:focus {
+    border-color: var(--primary-clr);
+}
+
+.add-promo-body .add-promo-amount input:focus::placeholder {
+    color: var(--primary-clr);
+}
+
+.promos {
+    margin-left: 10px;
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}
+
+.promos .promo {
+    position: relative;
+    width: 95%;
+    min-height: 90px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 20px;
+    padding-left: 50px;
+    color: #373c4f;
+    background: linear-gradient(90deg, #5c5f6b3a, transparent);
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+}
+
+.promos .promo:nth-child(even) {
+    background: transparent;
+}
+
+.promos .promo:hover {
+    background: linear-gradient(90deg, var(--primary-clr), transparent);
+    transition: all 0.5s ease;
+}
+
+.promos .promo .title {
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    margin-top: -15;
+}
+
+.promos .promo .title .promo-title {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.promos .promo .title i {
+    color: var(--primary-clr);
+    font-size: 0.5rem;
+}
+
+.promos .promo .promo-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.promos .promo:hover .title i,
+.promos .promo:hover .title h3,
+.promos .promo:hover .promo-time,
+.promos .promo:hover .promo-price,
+.promos .promo:hover .promo-cap {
+    color: #fff;
+}
+
+.promos .promo .promo-time,
+.promos .promo .promo-price,
+.promos .promo .promo-cap {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #373c4f;
+    margin-left: 15px;
+    margin-top: -15px;
+    pointer-events: none;
+    justify-content: space-between;
+}
+
+.promos .promo .promo-price {
+    margin-top: 5px;
+}
+
+.promos .promo .promo-cap {
+    margin-top: 5px;
+}
+
+.promos .promo::after {
+    content: "\2713";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 3rem;
+    line-height: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    color: var(--primary-clr);
+    transform: translateY(-50%);
+}
+
+.promos .promo:hover::after {
+    display: flex;
+}
+
+.add-promo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.add-promo-btn {
+    height: 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: var(--primary-clr);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid var(--primary-clr);
+}
+
+.add-promo-btn:hover {
+    color: var(--primary-clr);
+    background-color: transparent;
+}
+
+.promos .no-promotions {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: gray;
+    position: absolute;
+}
+
+.removeListing-btn {
+    margin: 0px 5px 5px 5px;
+    width: 30%;
+    position: relative;
+    background-color: rgb(230, 34, 77);
+    border-radius: 7px;
+    box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
+    padding: 5px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 30px;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.modal,
+.edit-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    color: black;
+  }
+  
+  /* The Close Button */
+  .modal-header .close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .modal-header .close:hover,
+  .modal-header .close:focus {
+    color: var(--primary-clr);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #fff;
+    color: black;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: center;
+  }

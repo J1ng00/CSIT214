@@ -177,9 +177,13 @@ const addEventBtn = document.querySelector(".add-event"),
     addEventContainer = document.querySelector(".add-event-wrapper"),
     addEventCloseBtn = document.querySelector(".off"),
     addEventTitle = document.querySelector(".event-name"),
-    addEventFrom = document.querySelector(".event-time-from"),
-    addEventTo = document.querySelector(".event-time-to");
-
+    fromHour = document.querySelector(".FromHours"),
+    fromMinute = document.querySelector(".FromTime"),
+    fromIdentifier = document.querySelector(".FromIdentifier"),
+    toHour = document.querySelector(".ToHours"),
+    toMinute = document.querySelector(".ToTime"),
+    toIdentifier = document.querySelector(".ToIdentifier");
+    
 addEventBtn.addEventListener("click", () => {
     addEventContainer.classList.toggle("active");
 })
@@ -322,10 +326,17 @@ function updateEvents(date) {
 //function to add events
     addEventSubmit.addEventListener("click", () => {
         const eventTitle = addEventTitle.value;
-        const eventTimeFrom = addEventFrom.value;
-        const eventTimeTo = addEventTo.value;
+        const eventfromHour = fromHour.value;
+        const eventfromMinute = fromMinute.value;
+        const eventfromIdentifier = fromIdentifier.value;
+        const eventtoHour = toHour.value;
+        const eventtoMinute = toMinute.value;
+        const eventtoIdentifier = toIdentifier.value;
+        const eventTimeFrom = eventfromHour + ":" + eventfromMinute + " " + eventfromIdentifier;
+        const eventTimeTo = eventtoHour + ":" + eventtoMinute + " " + eventtoIdentifier
 
-        if (eventTitle == "" || eventTimeFrom == "" || eventTimeTo == "") {
+        if (eventTitle == "" || eventfromHour == "" || eventfromMinute == ""|| eventfromIdentifier == "" 
+        || eventtoHour == ""|| eventtoMinute == ""||eventtoIdentifier == "") {
             alert("Please fill in all the fields");
             return;
         }
@@ -407,8 +418,12 @@ function updateEvents(date) {
         addEventContainer.classList.remove("active")
         //clear the fileds
         addEventTitle.value = "";
-        addEventFrom.value = "";
-        addEventTo.value = "";
+        fromHour.value = "";
+        fromMinute.value = "";
+        fromIdentifier.value= "";
+        toHour.value = "";
+        toMinute.value = "";
+        toIdentifier.value= "";
 
         //show current added event
         updateEvents(activeDay);
@@ -460,8 +475,10 @@ function populateModal(event) {
 
 // Update the event listener to call the populateModal function
 eventsContainer.addEventListener("click", (e) => {
+    console.log(e.target.classList);
     if (e.target.classList.contains("event")) {
         const eventTitle = e.target.children[0].children[1].innerHTML;
+        console.log(eventTitle);
         // Find the event object from eventsArr based on eventTitle
         const event = eventsArr.find(event => event.events.some(e => e.title === eventTitle));
         if (event) {
@@ -517,5 +534,4 @@ function removeListing() {
     modal.style.display = 'none';
 }
 
-
-
+getEvents();
