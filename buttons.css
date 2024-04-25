@@ -69,7 +69,7 @@
     box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .click-btn:hover {
@@ -84,7 +84,7 @@
     background-color: var(--primary-clr);
     color: hsl(0, 0%, 100%);
     box-shadow: var(--primaryshadow-clr) 0px 0px 0px 0px;
-    transform: translateY(5px);
+    transform: translateY(2px);
     transition: 100ms;
 }
 

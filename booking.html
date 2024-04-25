@@ -39,6 +39,49 @@
         </div>
     </div>
 
+    <div class="edit-container" id="edit_container">
+        <h4>Edit Bookings</h4>
+        <!--time container-->
+        <div class="time-container">
+            <h4 class="title">Available Slots</h4>
+            <div class="selection-container">
+                <div class="time-selection">
+                    <input type="checkbox" class="checkbox" id="0800">
+                    <label for="0800" class="checkbox-label">0800</label>
+                    <input type="checkbox" class="checkbox" id="0830">
+                    <label for="0830" class="checkbox-label">0830</label>
+                    <input type="checkbox" class="checkbox" id="0900">
+                    <label for="0900" class="checkbox-label">0900</label>
+                    <input type="checkbox" class="checkbox" id="0930">
+                    <label for="0930" class="checkbox-label">0930</label>
+                </div>
+            </div>
+        </div>
+        <!--time container-->
+
+        <!--promo code-->
+        <div class="promo-code-container">
+            <h4 class="title">Promo Code</h4>
+            <input type="text" class="promo-input" id="promo_input" />
+        </div>
+        <!--promo code-->
+
+        <!--Summary-->
+        <div class="summary-container">
+            <h4 class="title">Payment Information</h4>
+            <div class="payment-details">
+                <div class="payment-detail"><label>1 room x 4 session(s)</label><label>$20</label></div>
+                <div class="payment-detail"><label>Promo Discount:</label><label>$10</label></div>
+                <div class="payment-total"><label>Total Charge</label><label>$15</label></div>
+            </div>
+        </div>
+        <!--Summary-->
+        <div class="btn-container">
+            <button class="logout-btn" onclick="ToggleEditContainer()">Cancel</button>
+            <button class="click-btn" onclick="ToggleEditContainer()">Confirm</button>
+        </div>
+    </div>
+
     <div class="container">
         <div class="left">
             <h2>My Bookings</h2>
@@ -74,22 +117,15 @@
                 <div class="detail"><label class="title">Date: </label><label>04/04/2024</label></div>
                 <div class="detail"><label class="title">Time: </label><label>1200-1300</label></div>
             </div>
-            <button class="logout-btn" onclick="ToggleConfirmationContainer()">Cancel Booking</button>
+
+            <div class="btn-container">
+                <button class="click-btn" onclick="ToggleEditContainer()">Edit Booking</button>
+                <button class="logout-btn" onclick="ToggleConfirmationContainer()">Cancel Booking</button>
+            </div>
         </div>
     </div>
 </body>
 
-<script>
-    function ToggleConfirmationContainer() {
-        var confirmation = document.getElementById("confirm_container");
-        var display = confirmation.style.display;
-
-        if (display === "block") {
-            confirmation.style.display = "none";
-        } else {
-            confirmation.style.display = "block";
-        }
-    }
-</script>
+<script src="booking.js"></script>
 
 </html>

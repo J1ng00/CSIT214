@@ -27,6 +27,7 @@ function generateMenu() {
     if (currentPage.includes("student.html") || currentPage.includes("booking.html") || currentPage.includes("payment.html")) {
         menu.innerHTML += '<a href="../student.html"><li>Home Page</li></a>';
         menu.innerHTML += '<a href="../booking.html"><li>My Booking</li></a>';
+        menu.innerHTML += '<a href="../staff.html"><li>Staff</li></a>';
     } else if (currentPage.includes("staff.html")) {
         menu.innerHTML += '<a href="../promo.html"><li>Promo</li></a>';
     } else if (currentPage.includes("promo.html")) {

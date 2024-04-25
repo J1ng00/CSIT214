@@ -1,13 +1,9 @@
-function toggleBooking() {
-    var width = document.getElementById("booking_container").style.width;
-
-    if (width === "" || width === "0%") {
-        document.getElementById("booking_container").style.width = "70%";
-    } else {
-        document.getElementById("booking_container").style.width = "0%";
-    }
+function ToggleConfirmationContainer() {
+    var confirmation_container = document.getElementById("confirm_container");
+    confirmation_container.classList.toggle("show");
 }
 
-function gotopayment() {
-    window.location.href = "payment.html";
+function ToggleEditContainer() {
+    var edit_container = document.getElementById("edit_container");
+    edit_container.classList.toggle("show");
 }
