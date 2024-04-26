@@ -62,7 +62,7 @@
     overflow: hidden;
 }
 
-.show {
+.edit-container .show {
     opacity: 1;
     pointer-events: auto;
 }

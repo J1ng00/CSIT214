@@ -233,8 +233,8 @@
 
 /*----------selection radio animation----------*/
 
-/*----------checkbox animation----------*/
-.checkbox-label {
+/*----------time-checkbox animation----------*/
+.time-checkbox-label {
     position: relative;
     display: inline-block;
     width: fit-content;
@@ -252,25 +252,25 @@
     transition: all 0.3s;
 }
 
-.checkbox-label:hover {
+.time-checkbox-label:hover {
     background-color: var(--primary-clr);
     color: hsl(0, 0%, 100%);
     box-shadow: var(--primaryshadow-clr) 0px 7px 29px 0px;
 }
 
-.checkbox {
+.time-checkbox {
     display: none;
 }
 
-.checkbox:checked+.checkbox-label {
+.time-checkbox:checked+.time-checkbox-label {
     background-color: var(--checkboxselected-clr);
     box-shadow: 0 0px 20px var(--checkboxselectedshadow-clr);
 }
 
-.checkbox:disabled+.checkbox-label {
+.time-checkbox:disabled+.time-checkbox-label {
     cursor: default;
     background-color: var(--checkboxdisabled-clr);
     box-shadow: 0 0px 20px var(--checkboxdisabledshadow-clr);
 }
 
-/*----------checkbox animation----------*/
+/*----------time-checkbox animation----------*/

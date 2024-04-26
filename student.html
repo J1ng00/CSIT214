@@ -13,7 +13,6 @@
             $("#topbar").load("topbar.html");
         });
     </script>
-    <script src="backend.js"></script>
 
     <!--CSS-->
     <link rel="stylesheet" href="style.css">
@@ -79,15 +78,7 @@
                 <div class="time-container">
                     <h4 class="title">Available Slots</h4>
                     <div class="selection-container">
-                        <div class="time-selection">
-                            <input type="checkbox" class="checkbox" id="0800">
-                            <label for="0800" class="checkbox-label">0800</label>
-                            <input type="checkbox" class="checkbox" id="0830">
-                            <label for="0830" class="checkbox-label">0830</label>
-                            <input type="checkbox" class="checkbox" id="0900">
-                            <label for="0900" class="checkbox-label">0900</label>
-                            <input type="checkbox" class="checkbox" id="0930">
-                            <label for="0930" class="checkbox-label">0930</label>
+                        <div class="time-selection" id="time_selection">
                         </div>
                     </div>
                 </div>
@@ -96,18 +87,19 @@
                 <!--promo code-->
                 <div class="promo-code-container">
                     <h4 class="title">Promo Code</h4>
-                    <input type="text" class="promo-input" id="promo_input" />
+                    <input type="text" class="promo-input" id="promo_input" /><span id="promo_input_span"></span>
                 </div>
                 <!--promo code-->
 
-                <!--promo code-->
-                <div class="promo-code-container">
-                    <h4 class="title">Promo Code</h4>
-                    <input type="text" class="promo-input" id="promo_input" />
+                <!--Summary-->
+                <div class="summary-container">
+                    <h4 class="title">Payment Information</h4>
+                    <div class="payment-details" id="payment_details">
+                    </div>
                 </div>
-                <!--promo code-->
+                <!--Summary-->
 
-                <button class="book-btn" onclick="gotopayment()">Book Now</button>
+                <button class="book-btn" id="book_btn">Book Now</button>
             </div>
             <!--booking container-->
         </div>
