@@ -457,38 +457,6 @@ span.onclick = function() {
     modal.style.display = "none";
   }
 
-//create a function to remove events on click
-function populateModal(event) {
-    const modalTitle = document.querySelector(".modal-title");
-    const modalTime = document.querySelector(".modal-time");
-    const modalPrice = document.querySelector(".modal-price");
-    const modalCapacity = document.querySelector(".modal-capacity");
-
-    modalTitle.textContent = event.title;
-    modalTime.textContent = event.time;
-    modalPrice.textContent = event.price;
-    modalCapacity.textContent = event.capacity;
-
-    // Show the modal
-    modal.style.display = 'block';
-}
-
-// Update the event listener to call the populateModal function
-eventsContainer.addEventListener("click", (e) => {
-    console.log(e.target.classList);
-    if (e.target.classList.contains("event")) {
-        const eventTitle = e.target.children[0].children[1].innerHTML;
-        console.log(eventTitle);
-        // Find the event object from eventsArr based on eventTitle
-        const event = eventsArr.find(event => event.events.some(e => e.title === eventTitle));
-        if (event) {
-            const clickedEvent = event.events.find(e => e.title === eventTitle);
-            populateModal(clickedEvent);
-        }
-    }
-   
-});
-
 function convertTo24Hour(time) {
     let [timeStr, period] = time.split(" ");
     let [hours, minutes] = timeStr.split(":");
@@ -534,4 +502,101 @@ function removeListing() {
     modal.style.display = 'none';
 }
 
-getEvents();
+// Function to populate the modal with event details for editing
+function populateModalForEdit(eventTitle) {
+    // Find the event object from eventsArr based on eventTitle
+    const eventDay = eventsArr.find(day => day.events.some(event => event.title === eventTitle));
+    if (eventDay) {
+        const event = eventDay.events.find(event => event.title === eventTitle);
+        if (event) {
+            // Populate the modal inputs with event details
+            document.querySelector(".modal-title").textContent = event.title;
+            console.log(event.title);
+            // Extract hours, minutes, and identifier from the time string
+            const timeParts = event.time.split(" - ");
+            const timeFromParts = timeParts[0].split(" ");
+            const timeToParts = timeParts[1].split(" ");
+            const timeFrom = timeFromParts[0].split(":");
+            const timeTo = timeToParts[0].split(":");
+            document.querySelector(".modal-time-from-hours").value = timeFrom[0];
+            document.querySelector(".modal-time-from-minutes").value = timeFrom[1];
+            document.querySelector(".modal-time-from-identifier").value = timeFromParts[1];
+            document.querySelector(".modal-time-to-hours").value = timeTo[0];
+            document.querySelector(".modal-time-to-minutes").value = timeTo[1]; 
+            document.querySelector(".modal-time-to-identifier").value = timeToParts[1];
+
+            const priceParts = event.price.split(" ");
+            const capacityParts = event.capacity.split(" ");
+            document.querySelector(".modal-price-input").value = priceParts[0].slice(1);
+            document.querySelector(".modal-capacity-input").value = capacityParts[0].slice(0, -3);
+            console.log(priceParts[0].slice(1));
+            console.log(capacityParts[0].charAt(0));
+        }
+    }
+
+    // Display the modal
+    modal.style.display = "block";
+}
+
+// Update the event listener to call the populateModalForEdit function
+eventsContainer.addEventListener("click", (e) => {
+    console.log(e.target.classList);
+    if (e.target.classList.contains("event")) {
+        const eventTitle = e.target.children[0].children[1].innerHTML;
+        console.log(eventTitle);
+        populateModalForEdit(eventTitle);
+    }
+});
+
+// Function to handle the edit button click
+function editListing(button) {
+
+    // Find the modal content associated with the clicked button
+    const modalContent = button.closest('.modal-content');
+    // Find the title element within the modal content
+    const modalTitle = modalContent.querySelector('.modal-title');
+    // Get the event title from the modal title element
+    const eventTitle = modalTitle.textContent.trim();
+
+    // Retrieve the updated event details from the modal inputs
+    const modalTitleInput = document.querySelector(".modal-title").textContent;
+    const modalTimeFromHours = document.querySelector(".modal-time-from-hours").value;
+    const modalTimeFromMinutes = document.querySelector(".modal-time-from-minutes").value;
+    const modalTimeFromIdentifier = document.querySelector(".modal-time-from-identifier").value;
+    const modalTimeToHours = document.querySelector(".modal-time-to-hours").value;
+    const modalTimeToMinutes = document.querySelector(".modal-time-to-minutes").value;
+    const modalTimeToIdentifier = document.querySelector(".modal-time-to-identifier").value;
+    const modalPriceInput = document.querySelector(".modal-price-input").value;
+    const modalCapacityInput = document.querySelector(".modal-capacity-input").value;
+
+    // Construct the updated event time strings
+    const timeFrom = `${modalTimeFromHours}:${modalTimeFromMinutes} ${modalTimeFromIdentifier}`;
+    const timeTo = `${modalTimeToHours}:${modalTimeToMinutes} ${modalTimeToIdentifier}`;
+
+    const startTime = new Date(`2000-01-01 ${timeFrom}`);
+    const endTime = new Date(`2000-01-01 ${timeTo}`);
+    if (startTime >= endTime) {
+        alert("End time must be after start time");
+        return; // Don't proceed if validation fails
+    }
+    
+    // Find the day in eventsArr
+    const dayIndex = eventsArr.findIndex(day => day.events.some(event => event.title === eventTitle));
+    if (dayIndex !== -1) {
+        // Find the event in the day's events
+        const eventIndex = eventsArr[dayIndex].events.findIndex(event => event.title === eventTitle);
+        if (eventIndex !== -1) {
+            // Update the event details
+            eventsArr[dayIndex].events[eventIndex].title = modalTitleInput;
+            eventsArr[dayIndex].events[eventIndex].time = `${timeFrom} - ${timeTo}`;
+            eventsArr[dayIndex].events[eventIndex].price = "$"+modalPriceInput+" /30mins";
+            eventsArr[dayIndex].events[eventIndex].capacity = modalCapacityInput+"pax";
+
+            // Update the UI with the new event details (optional)
+            updateEvents(eventsArr[dayIndex].day);
+        }
+    }
+
+    // Close the modal after editing
+    modal.style.display = "none";
+}

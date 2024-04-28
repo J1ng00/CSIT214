@@ -133,67 +133,47 @@
                 </div>
                 <div class="modal-body">
                     <p><strong>Title:</strong> <span class="modal-title"></span></p>
-                    <p><strong>Time:</strong> <span class="modal-time"></span></p>
-                    <p><strong>Price:</strong> <span class="modal-price"></span></p>
-                    <p><strong>Capacity:</strong> <span class="modal-capacity"></span></p>
+                    <p><strong>Time From:</strong>  
+                        <select class = "modal-time-from-hours">
+                            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option>
+                            <option value="4">4</option> <option value="5">5</option> <option value="6">6</option>
+                            <option value="7">7</option> <option value="8">8</option> <option value="9">9</option>
+                            <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
+                        </select>
+                        <select class = "modal-time-from-minutes">
+                            <option value="00">00</option> <option value="30">30</option>
+                        </select>
+                        <select class = "modal-time-from-identifier">
+                            <option value="AM">AM</option> <option value="PM">PM</option>
+                        </select>
+                    </p>
+                    <p><strong>Time To:</strong> 
+                        <select class = "modal-time-to-hours">
+                            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option>
+                            <option value="4">4</option> <option value="5">5</option> <option value="6">6</option>
+                            <option value="7">7</option> <option value="8">8</option> <option value="9">9</option>
+                            <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
+                        </select>
+                        <select class = "modal-time-to-minutes">
+                            <option value="00">00</option> <option value="30">30</option>
+                        </select>
+                        <select class = "modal-time-to-identifier">
+                            <option value="AM">AM</option> <option value="PM">PM</option>
+                        </select>
+                    </p>
+                    <p><strong>Price:</strong> 
+                        <input type="number" class="modal-price-input" step="0.01" min="0">
+                    </p>
+                    <p><strong>Capacity:</strong> 
+                        <input type="number" class="modal-capacity-input" step="1" pattern="\d*">
+                    </p>
                 </div>
                 <div class="modal-footer">
+                    <button class="removeListing-btn" onclick="editListing(this)">Edit Listing</button>
                     <button class="removeListing-btn" onclick="removeListing()">Remove Listing</button>
                 </div>
             </div>
         </div>
-        <!--          
-        <div class="edit-modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close-editmodal">&times;</span>
-                    <h2>Edit Event</h2>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Title:</strong>
-                        <input type="text" placeholder="Edit Name" class="edit-name" />
-                    </p>
-                    <p><strong>Time from:</strong>
-                        <select class = "EditFromHours">
-                            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option>
-                            <option value="4">4</option> <option value="5">5</option> <option value="6">6</option>
-                            <option value="7">7</option> <option value="8">8</option> <option value="9">9</option>
-                            <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
-                        </select>
-                        <select class = "EditFromMins">
-                            <option value="0">00</option> <option value="30">30</option>
-                        </select>
-                        <select class = "EditFromIdentifier">
-                            <option value="AM">AM</option> <option value="PM">PM</option>
-                        </select>
-                    </p>
-                    <p><strong>Time from:</strong>
-                        <select class = "EditToHours">
-                            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option>
-                            <option value="4">4</option> <option value="5">5</option> <option value="6">6</option>
-                            <option value="7">7</option> <option value="8">8</option> <option value="9">9</option>
-                            <option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
-                        </select>
-                        <select class = "EditToMins">
-                            <option value="0">00</option> <option value="30">30</option>
-                        </select>
-                        <select class = "EditToIdentifier">
-                            <option value="AM">AM</option> <option value="PM">PM</option>
-                        </select>
-                    </p>   
-                    <p><strong>Price:</strong>
-                        <input type="number" class="roomPrice" step="0.01" min="0">
-                    </p>
-                    <p><strong>Capacity:</strong> 
-                        <input type="number" class="capNumber" step="1" pattern="\d*">
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button class="confirmListing-btn" onclick="">Confirm</button>
-                </div>
-            </div>
-        </div>
-        -->
     </div>
 
     </div>
