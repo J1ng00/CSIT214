@@ -34,8 +34,8 @@
         <h4>Confirmation</h4>
         <label>Cancel this booking?</label>
         <div class="buttons">
-            <button class="confirm-cancel-btn" onclick="ToggleConfirmationContainer()">No</button>
-            <button class="logout-btn" onclick="ToggleConfirmationContainer()">Cancel</button>
+            <button class="confirm-cancel-btn" id="confirmation_cancelled">No</button>
+            <button class="logout-btn" id="confirmation_confirm">Cancel</button>
         </div>
     </div>
 
@@ -45,15 +45,7 @@
         <div class="time-container">
             <h4 class="title">Available Slots</h4>
             <div class="selection-container">
-                <div class="time-selection">
-                    <input type="checkbox" class="checkbox" id="0800">
-                    <label for="0800" class="checkbox-label">0800</label>
-                    <input type="checkbox" class="checkbox" id="0830">
-                    <label for="0830" class="checkbox-label">0830</label>
-                    <input type="checkbox" class="checkbox" id="0900">
-                    <label for="0900" class="checkbox-label">0900</label>
-                    <input type="checkbox" class="checkbox" id="0930">
-                    <label for="0930" class="checkbox-label">0930</label>
+                <div class="time-selection" id="time_selection">
                 </div>
             </div>
         </div>
@@ -62,67 +54,31 @@
         <!--promo code-->
         <div class="promo-code-container">
             <h4 class="title">Promo Code</h4>
-            <input type="text" class="promo-input" id="promo_input" />
+            <input type="text" class="promo-input" id="promo_input" /><span id="promo_span"></span>
         </div>
         <!--promo code-->
 
         <!--Summary-->
         <div class="summary-container">
             <h4 class="title">Payment Information</h4>
-            <div class="payment-details">
-                <div class="payment-detail"><label>1 room x 4 session(s)</label><label>$20</label></div>
-                <div class="payment-detail"><label>Promo Discount:</label><label>$10</label></div>
-                <div class="payment-total"><label>Total Charge</label><label>$15</label></div>
+            <div class="payment-details" id="payment_detail">
             </div>
         </div>
         <!--Summary-->
-        
+
         <div class="btn-container">
-            <button class="logout-btn" onclick="ToggleEditContainer()">Cancel</button>
-            <button class="click-btn" onclick="ToggleEditContainer()">Confirm</button>
+            <button class="logout-btn" id="cancel_edit">Cancel</button>
+            <button class="click-btn" id="confirm_edit">Confirm</button>
         </div>
     </div>
 
     <div class="container">
-        <div class="left">
+        <div class="left" id="details-container">
             <h2>My Bookings</h2>
-            <div class="bookings">
-                <div class="event-btn" onclick="toggleBooking()">
-                    <div class="event-details">
-                        <label class="title">Event 1</label>
-                        <label class="detail">12:00AM - 12:00PM</label>
-                        <label class="detail">Cost: 100</label>
-                    </div>
-                </div>
-                <div class="event-btn" onclick="toggleBooking()">
-                    <div class="event-details">
-                        <label class="title">Event 1</label>
-                        <label class="detail">12:00AM - 12:00PM</label>
-                        <label class="detail">Cost: 100</label>
-                    </div>
-                </div>
-                <div class="event-btn" onclick="toggleBooking()">
-                    <div class="event-details">
-                        <label class="title">Event 1</label>
-                        <label class="detail">12:00AM - 12:00PM</label>
-                        <label class="detail">Cost: 100</label>
-                    </div>
-                </div>
+            <div class="bookings" id="bookings">
             </div>
         </div>
-        <div class="right">
-            <h2>Details</h2>
-            <div class="details-container">
-                <div class="detail"><label class="title">Booking Ref: </label><label>bk123456</label></div>
-                <div class="detail"><label class="title">Room: </label><label>Room1</label></div>
-                <div class="detail"><label class="title">Date: </label><label>04/04/2024</label></div>
-                <div class="detail"><label class="title">Time: </label><label>1200-1300</label></div>
-            </div>
-
-            <div class="btn-container">
-                <button class="click-btn" onclick="ToggleEditContainer()">Edit Booking</button>
-                <button class="logout-btn" onclick="ToggleConfirmationContainer()">Cancel Booking</button>
-            </div>
+        <div class="right" id="details_container">
         </div>
     </div>
 </body>

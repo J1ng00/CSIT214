@@ -1,12 +1,51 @@
 //----------default data used for testing----------//
 function addDefaultData() {
     let eventsArr = [];
-    eventsArr.push({ "day": 27, "month": 4, "year": 2024, "events": [{ "title": "Test", "time": "12:00 PM - 1:00 AM", "price": "$12 /30 mins", "capacity": "10pax" }] });
-    eventsArr.push({ "day": 26, "month": 4, "year": 2024, "events": [{ "title": "Test2", "time": "1:00 PM - 2:00 PM", "price": "$15 /30 mins", "capacity": "15pax" }] });
+    eventsArr.push({
+        "day": 28,
+        "month": 4,
+        "year": 2024,
+        "events": [{
+            "title": "Test",
+            "time": "12:00 PM - 1:00 AM",
+            "price": "$12 /30 mins",
+            "capacity": "10pax"
+        }]
+    });
+    eventsArr.push({
+        "day": 28,
+        "month": 4,
+        "year": 2024,
+        "events": [{
+            "title": "Test2",
+            "time": "1:00 PM - 2:00 PM",
+            "price": "$15 /30 mins",
+            "capacity": "15pax"
+        }]
+    });
     let promosArr = [];
-    promosArr.push({ title: "Promo1", amount: "10%" });
-    bookingsArr.push({ "event": { "title": "Test", "time": "12:00 PM - 1:00 AM", "price": "$12 /30 mins", "capacity": "10pax", "date": "2024/4/27" }, "promo": { "title": "Promo1", "discount": "10%" }, "time": ["1700", "1730"], "cost": "$24" });
-    //localStorage.setItem("bookings", JSON.stringify(bookingsArr));
+    promosArr.push({
+        "title": "Promo1",
+        "amount": "10%"
+    });
+    bookingsArr.push({
+        "ref": "1001",
+        "event": {
+            "title": "Test",
+            "time": "12:00 PM - 1:00 AM",
+            "price": "$12 / 30 mins",
+            "capacity": "10pax",
+            "date": "2024 / 4 / 27"
+        },
+        "promo": {
+            "title": "Promo1",
+            "discount": "10 % "
+        },
+        "time": ["1700", "1730"],
+        "cost": "$24",
+        "user": "uowstudent"
+    });
+    localStorage.setItem("bookings", JSON.stringify(bookingsArr));
     localStorage.setItem("promos", JSON.stringify(promosArr));
     localStorage.setItem("events", JSON.stringify(eventsArr));
     console.log("push done");
@@ -78,8 +117,8 @@ function initEventListener() {
     document.getElementById('promo_input').addEventListener('input', () => {
 
         const inputValue = document.getElementById('promo_input').value;
-
         checkPromo(inputValue);
+
     });
 
     document.querySelector('.days').addEventListener('click', () => {
@@ -97,6 +136,7 @@ var bookingsArray = [];
 var bookingsArr = [];
 var promoApplied = null
 var selectedEvent = null;
+var refNo = 0;
 //----------Global Variables----------//
 
 //----------Console Logs----------//
@@ -137,6 +177,8 @@ function consoleLog() {
 
         bookingsArray.forEach((booking, index) => {
             console.log(`Booking: ${index}`);
+            console.log("Ref No: ", booking.getRef());
+            console.log("User: ", booking.getUser());
             console.log("Event: ", booking.getEvent());
             console.log("Promo: ", booking.getPromo());
             console.log("Time: ", booking.getTime());
@@ -189,6 +231,71 @@ class Event {
         return priceInInt;
 
     }
+
+    getTimeArr() {
+
+        let nextDay;
+        let [startTime, endTime] = this.time.split("-");
+
+        startTime = startTime.trim();
+        endTime = endTime.trim();
+
+        startTime = this.convertTo24Hour(startTime);
+        endTime = this.convertTo24Hour(endTime);
+
+        const interval = 30;
+        let timeArr = [];
+        let hour = parseInt(startTime.slice(0, 2));
+        let min = parseInt(startTime.slice(2));
+
+        for (let check = startTime; check !== endTime;) {
+
+            if (min >= 60) {
+                min -= 60;
+                hour += 1;
+            }
+            if (hour >= 24) {
+                hour -= 24;
+            }
+
+            timeArr.push(String(hour).padStart(2, '0') + String(min).padStart(2, '0'));
+            check = String(hour).padStart(2, '0') + String(min).padStart(2, '0');
+            min += interval
+        }
+
+        // remove last element from timeArr as interval from endTime to endtime + 30min not valid for booking
+        timeArr.pop();
+
+        return timeArr;
+    }
+
+    // change time into 24 format
+    convertTo24Hour(time) {
+        let [first, second] = time.split(" ");
+        let [hour, min] = first.trim().split(":");
+        second = second.trim();
+        hour = parseInt(hour);
+
+        if (second === "AM") {
+
+            if (hour === 12) {
+                hour = '00';
+            }
+
+        } else {
+
+            if (hour !== 12) {
+                hour += 12;
+            }
+
+        }
+
+        hour = String(hour).padStart(2, '0');
+        min = String(min).padStart(2, '0');
+
+        return `${hour}${min}`;
+    }
+
 }
 //----------Events class----------//
 
@@ -216,14 +323,24 @@ class PromoCode {
 }
 //----------Promo codes class----------//
 
-//----------book class----------//
+//----------bookings class----------//
 class Bookings {
 
-    constructor(event, promo, time, cost) {
+    constructor(ref, user, event, promo, time, cost) {
         this.setEvent(event);
         this.setPromo(promo);
+        this.ref = ref;
+        this.user = user;
         this.time = time;
         this.cost = cost;
+    }
+
+    getRef() {
+        return this.ref;
+    }
+
+    getUser() {
+        return this.user;
     }
 
     getEvent() {
@@ -267,7 +384,7 @@ class Bookings {
 
     }
 }
-//----------book class----------//
+//----------bookings class----------//
 
 //----------Parse event from local storage into object----------//
 function parseStudentEvent() {
@@ -343,9 +460,11 @@ function parseBookings() {
 
             count++;
 
-            bookingsArray.push(new Bookings(booking.event, booking.promo, booking.time, booking.cost));
+            bookingsArray.push(new Bookings(booking.ref, booking.user, booking.event, booking.promo, booking.time, booking.cost));
 
         });
+
+        getRefNow();
 
         console.log(`Total ${count} booking(s) pulled from local storage`);
         console.log('');
@@ -354,6 +473,18 @@ function parseBookings() {
         console.log("No bookings found in local storage.");
         console.log('');
     }
+}
+
+// get Ref
+function getRefNow() {
+
+    bookingsArray.forEach(booking => {
+
+        if (booking.getRef() > refNo) {
+            refNo = booking.getRef();
+        }
+
+    });
 }
 //----------Parse bookings from local storage into object----------//
 
@@ -421,50 +552,12 @@ function addStudentEvent() {
 //----------Update Booking Container when click on Event btn----------//
 function updateBookingContainer(event) {
 
-    //----------time selection----------//
-    let time = event.getTime();
-    let nextDay;
-    let [startTime, endTime] = time.split("-");
 
-    startTime = startTime.trim();
-    endTime = endTime.trim();
-
-    startTime = convertTo24Hour(startTime);
-    endTime = convertTo24Hour(endTime);
-
-    if (startTime >= endTime) {
-
-        nextDay = true;
-
-    }
-
-    const interval = 30;
-    let timeArr = [];
-    let hour = parseInt(startTime.slice(0, 2));
-    let min = parseInt(startTime.slice(2));
-
-    for (let check = startTime; check !== endTime;) {
-
-        if (min >= 60) {
-            min -= 60;
-            hour += 1;
-        }
-        if (hour >= 24) {
-            hour -= 24;
-        }
-
-        timeArr.push(String(hour).padStart(2, '0') + String(min).padStart(2, '0'));
-        check = String(hour).padStart(2, '0') + String(min).padStart(2, '0');
-        min += interval
-    }
-
-    // remove last element from timeArr as interval from endTime to endtime + 30min not valid for booking
-    timeArr.pop();
 
     // add innerHTML for time-selection
     let content = '';
 
-    timeArr.forEach(time => {
+    event.getTimeArr().forEach(time => {
         content += `
                     <input type="checkbox" class="time-checkbox" id="${time}" value="${time}">
                     <label for="${time}" class="time-checkbox-label">${time}</label>
@@ -502,49 +595,12 @@ function updateBookingContainer(event) {
     });
 
     // for console logs
-    timeArr.forEach(time => {
+    event.getTimeArr().forEach(time => {
         console.log(time);
     })
-
-    if (nextDay) {
-        console.log('next day detected!')
-        console.log('');
-    }
-
-    // for console logs
-    console.log(startTime);
-    console.log(endTime);
-    console.log('');
-
     //----------time selection----------//
 }
 
-// change time into 24 format
-function convertTo24Hour(time) {
-    let [first, second] = time.split(" ");
-    let [hour, min] = first.trim().split(":");
-    second = second.trim();
-    hour = parseInt(hour);
-
-    if (second === "AM") {
-
-        if (hour === 12) {
-            hour = '00';
-        }
-
-    } else {
-
-        if (hour !== 12) {
-            hour += 12;
-        }
-
-    }
-
-    hour = String(hour).padStart(2, '0');
-    min = String(min).padStart(2, '0');
-
-    return `${hour}${min}`;
-}
 //----------Update Booking Container when click on Event btn----------//
 
 //----------promo codes----------//
@@ -639,11 +695,13 @@ function book() {
 
     });
 
+    const userNow = JSON.parse(localStorage.getItem("userNow"));
     const cost = document.getElementById('payment_total').innerHTML.trim();
 
-    bookingsArray.push(new Bookings(selectedEvent, promoApplied, timeSelected, cost));
+    bookingsArray.push(new Bookings(++refNo, userNow, selectedEvent, promoApplied, timeSelected, cost));
 
     console.log(`Selected time: ${timeSelected}`);
     console.log("Booking:", bookingsArray[bookingsArray.length - 1]);
 }
 //----------book----------//
+//----------Update Booking Container when click on Event btn----------//

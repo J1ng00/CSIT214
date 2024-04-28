@@ -1,253 +1,278 @@
 <html>
-    <head>
-        <title>Login Page</title>
-            <style>
-                /* Code for infinity Symbol */
-                svg{
-                    max-width: 30em;
-                    stroke: #f6f5f5;
-                    stroke-linecap: round;
-                    fill:none;
-                    Stroke-width:7%;
-                    margin-top:-40px;
-                }
 
-                svg use{
-                    stroke: #514c4c;
-                    animation: animate 2s linear infinite;
-                }
+<head>
+    <title>Login Page</title>
+    <style>
+        /* Code for infinity Symbol */
+        svg {
+            max-width: 30em;
+            stroke: #f6f5f5;
+            stroke-linecap: round;
+            fill: none;
+            Stroke-width: 7%;
+            margin-top: -40px;
+        }
 
-                @keyframes animate{
-                    to{
-                        stroke-dashoffset: 0px;
-                    }
-                }
-                
-                /* code for Log in form */
-                .wrapper{
-                    color: black;
-                    width: auto;
-                    max-width: 450px;
-                    background: white;
-                    padding: 10px;
-                    margin: 0 auto;
-                    border-radius: 25px;
-                }
+        svg use {
+            stroke: #514c4c;
+            animation: animate 2s linear infinite;
+        }
 
-                .wrapper h1{ 
-                    font-size: 32px;
-                    text-align: center;
-                    font-family: "Josefin Sans", sans-serif;
-                }
+        @keyframes animate {
+            to {
+                stroke-dashoffset: 0px;
+            }
+        }
 
-                .wrapper .input-box {
-                    position: relative;
-                    width: 100%;
-                    height: 40px;
-                    margin: 20px 0;
-                }
+        /* code for Log in form */
+        .wrapper {
+            color: black;
+            width: auto;
+            max-width: 450px;
+            background: white;
+            padding: 10px;
+            margin: 0 auto;
+            border-radius: 25px;
+        }
 
-                .input-box input{
-                    width: 100%;
-                    height: 100%;
-                    background: transparent;
-                    border: none;
-                    outline: none;
-                    border: 2px solid rgba(0, 0, 0, 0.749);
-                    border-radius: 40px;
-                    font-size: 16px;
-                    color: black;
-                    padding: 20px 45px 20px 20px;
-                    font-family: "Josefin Sans", sans-serif;
-                }
+        .wrapper h1 {
+            font-size: 32px;
+            text-align: center;
+            font-family: "Josefin Sans", sans-serif;
+        }
 
-                .input-box select{
-                    width: 100%;
-                    height: 100%;
-                    background: transparent;
-                    border: none;
-                    outline: none;
-                    border: 2px solid rgba(0, 0, 0, 0.749);
-                    border-radius: 40px;
-                    font-size: 16px;
-                    color: black;
-                    padding: 10px;
-                    padding-right: 40px;
-                    font-family: "Josefin Sans", sans-serif;
-                }
+        .wrapper .input-box {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            margin: 20px 0;
+        }
 
-                .input-box input::placeholder{
-                    color: black;
-                }
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(0, 0, 0, 0.749);
+            border-radius: 40px;
+            font-size: 16px;
+            color: black;
+            padding: 20px 45px 20px 20px;
+            font-family: "Josefin Sans", sans-serif;
+        }
 
-                .input-box i{
-                    position: absolute;
-                    right: 20px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    font-size: 20px;
-                    font-family: "Josefin Sans", sans-serif;
-                }
+        .input-box select {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(0, 0, 0, 0.749);
+            border-radius: 40px;
+            font-size: 16px;
+            color: black;
+            padding: 10px;
+            padding-right: 40px;
+            font-family: "Josefin Sans", sans-serif;
+        }
 
-                .wrapper .remember-forgot{
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
-                    font-size: 14.5px;
-                    margin-top: 20px;
-                    font-family: "Josefin Sans", sans-serif;
-                }
+        .input-box input::placeholder {
+            color: black;
+        }
 
-                .remember-forgot label input {
-                    accent-color: black;
-                    margin-right: 3px;
-                }
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            font-family: "Josefin Sans", sans-serif;
+        }
 
-                .wrapper .remember-forgot label {
-                display: inline-flex; /* Ensures the checkbox and text are aligned */
-                align-items: center; /* Vertically center the checkbox and text */
-                }
+        .wrapper .remember-forgot {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14.5px;
+            margin-top: 20px;
+            font-family: "Josefin Sans", sans-serif;
+        }
 
-                .wrapper .btn {
-                    width: 100%;
-                    height: 45px;
-                    background: white;
-                    border: none;
-                    outline: none;
-                    border-radius: 40px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) ;
-                    cursor: pointer;
-                    font-size: 16px;
-                    color: black;
-                    font-weight: 600;
-                    margin-top: 20px;
-                    font-family: "Josefin Sans", sans-serif;
-                }
+        .remember-forgot label input {
+            accent-color: black;
+            margin-right: 3px;
+        }
 
-                /*code for Space background */
+        .wrapper .remember-forgot label {
+            display: inline-flex;
+            /* Ensures the checkbox and text are aligned */
+            align-items: center;
+            /* Vertically center the checkbox and text */
+        }
 
-                .background{
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    z-index: -1;
-                    overflow: hidden;
-                }
-                
-                .stars, .twinkling {
-                    position:absolute;
-                    display:block;
-                    top:0;
-                    left:0; 
-                    width:100%; 
-                    height:100%;
-                    background-repeat: repeat;
-                    background-size: cover;
-                    animation: moveStars 20s infinite linear;
-                }
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: white;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 16px;
+            color: black;
+            font-weight: 600;
+            margin-top: 20px;
+            font-family: "Josefin Sans", sans-serif;
+        }
 
-                .stars {
-                    background: #000000 url('https://i.imgur.com/YKY28eT.png');
-                }
+        /*code for Space background */
 
-                .twinkling{
-                    background:transparent url('https://i.imgur.com/XYMF4ca.png');
-                }
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .stars,
+        .twinkling {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: repeat;
+            background-size: cover;
+            animation: moveStars 20s infinite linear;
+        }
+
+        .stars {
+            background: #000000 url('https://i.imgur.com/YKY28eT.png');
+        }
+
+        .twinkling {
+            background: transparent url('https://i.imgur.com/XYMF4ca.png');
+        }
 
 
-               @keyframes moveStars {
-                    from { background-position: 0 0; }
-                    to { background-position: 100% 0; }
-                 }
-            </style>
+        @keyframes moveStars {
+            from {
+                background-position: 0 0;
+            }
 
-            <script>           
-                //dummy validation
-                var validUsername1 = "uowstudent"
-                var validPassword1 = "uowstudent123"
-                var validUsername2 = "uowlecturer"
-                var validPassword2 = "uowlecturer123"
+            to {
+                background-position: 100% 0;
+            }
+        }
+    </style>
 
-                //checking valid login according to roles
-                function validateForm (event) {
-                    event.preventDefault (); //prevent default form submission so can validate
+    <script>
+        //dummy validation
+        var validUsername1 = "uowstudent"
+        var validPassword1 = "uowstudent123"
+        var validUsername2 = "uowlecturer"
+        var validPassword2 = "uowlecturer123"
+        var userNow;
 
-                    var username = document.getElementById ("Username").value;
-                    var password = document.getElementById ("Password").value;
-                    var role = document.getElementById ("role").value;
+        //checking valid login according to roles
+        function validateForm(event) {
+            event.preventDefault(); //prevent default form submission so can validate
 
-                    if (username == validUsername2 && password == validPassword2 && role == "lecturer"){
-                        window.location.href = "staff.html";
-                    }
-                    else if (username == validUsername1 && password == validPassword1 && role == "student"){
-                        window.location.href = "student.html";
-                    }
-                    else{
-                        alert ("Invalid login username or password")
-                    }
-                }
-            </script>
+            var username = document.getElementById("Username").value;
+            var password = document.getElementById("Password").value;
+            var role = document.getElementById("role").value;
 
-            <link href = "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> 
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin Sans">
-    </head>
+            if (username == validUsername2 && password == validPassword2 && role == "lecturer") {
+                window.location.href = "staff.html";
+                userNow = validUsername2;
+            }
+            else if (username == validUsername1 && password == validPassword1 && role == "student") {
+                window.location.href = "student.html";
+                userNow = validUsername1;
+            }
+            else {
+                alert("Invalid login username or password");
+            }
 
-    <body>
-        <table width = "100%" height = "100%">
-            <tr height = "25%">
-                <td align="center" >
-                    <h1 style= "font-family: Josefin Sans, sans-serif; font-size: 60px; color: white; margin-top: 50px;"> Team Infinity's <br> Room Booking System</h1>
-                    <svg viewBox="-150 -75 300 100" width="150" height="75">
-                        <path id="stroke" d="M26.55 -26.55 A37.5 37.5 0 1 1 26.55 26.55 L-26.55 -26.55 A37.5 37.5 0 1 0 -26.55 26.55 Z"></path>
-                        <use xlink:href="#stroke" stroke-dasharray="117.75 386.625" stroke-dashoffset="504.375"></use>
-                    </svg>
-                    
-                </td>
-            </tr>
-            <tr>
-                <td align="center" height = "75%">
+            const user = JSON.parse(localStorage.getItem('userNow'));
 
-                    <div class="background">
-                        <div class="stars"></div>
-                        <div class="twinkling"></div>
-                    </div>    
-                    
-                    <div class = "wrapper">
-                        <form id = "loginForm" onsubmit = "validateForm (event)">
-                            <h1> Login</h1>
-                            <div class = "input-box"> 
-                                <input type = "text" placeholder = "Username" id = "Username" name = "Username" required>
-                                <i class = "bx bxs-user"></i>
+            if (user) {
+                localStorage.removeItem("userNow");
+            }
+
+            if (userNow !== undefined) {
+                localStorage.setItem("userNow", JSON.stringify(userNow));
+            }
+        }
+    </script>
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin Sans">
+</head>
+
+<body>
+    <table width="100%" height="100%">
+        <tr height="25%">
+            <td align="center">
+                <h1 style="font-family: Josefin Sans, sans-serif; font-size: 60px; color: white; margin-top: 50px;">
+                    Team Infinity's <br> Room Booking System</h1>
+                <svg viewBox="-150 -75 300 100" width="150" height="75">
+                    <path id="stroke"
+                        d="M26.55 -26.55 A37.5 37.5 0 1 1 26.55 26.55 L-26.55 -26.55 A37.5 37.5 0 1 0 -26.55 26.55 Z">
+                    </path>
+                    <use xlink:href="#stroke" stroke-dasharray="117.75 386.625" stroke-dashoffset="504.375"></use>
+                </svg>
+
+            </td>
+        </tr>
+        <tr>
+            <td align="center" height="75%">
+
+                <div class="background">
+                    <div class="stars"></div>
+                    <div class="twinkling"></div>
+                </div>
+
+                <div class="wrapper">
+                    <form id="loginForm" onsubmit="validateForm (event)">
+                        <h1> Login</h1>
+                        <div class="input-box">
+                            <input type="text" placeholder="Username" id="Username" name="Username" required>
+                            <i class="bx bxs-user"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" placeholder="Password" id="Password" name="Password" required>
+                            <i class="bx bxs-lock-alt"></i>
+                        </div>
+                        <div class="input-box">
+                            <select id="role" name="role" required>
+                                <option value="" disabled selected hidden>Role</option>
+                                <option value="student">Student</option>
+                                <option value="lecturer">Lecturer</option>
+                            </select>
+                            <i class='bx bxs-down-arrow'></i>
+                        </div>
+                        <div class="remember-forgot">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                            <button type="submit" class="btn"> Login </button>
+
+                            <div class="register-link">
+                                <p> Don't have an account? <a href="#"> Register</a></p>
+                                <a href="#"> Forgot Password?</a>
                             </div>
-                            <div class = "input-box"> 
-                                <input type = "password" placeholder = "Password" id = "Password" name = "Password" required>
-                                <i class = "bx bxs-lock-alt"></i>
-                            </div>
-                            <div class = "input-box"> 
-                                <select id="role" name="role" required>
-                                    <option value="" disabled selected hidden>Role</option>
-                                    <option value="student">Student</option>
-                                    <option value="lecturer">Lecturer</option>
-                                </select>
-                                <i class='bx bxs-down-arrow'></i>
-                            </div>
-                            <div class="remember-forgot">
-                                <label>
-                                    <input type="checkbox"> Remember me
-                                </label>
-                                <button type ="submit" class = "btn"> Login </button>
-
-                                <div class="register-link">
-                                    <p> Don't have an account? <a href="#"> Register</a></p>
-                                    <a href="#"> Forgot Password?</a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </body>
+                        </div>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>

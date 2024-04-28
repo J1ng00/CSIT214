@@ -62,7 +62,7 @@
     overflow: hidden;
 }
 
-.edit-container .show {
+.show {
     opacity: 1;
     pointer-events: auto;
 }
@@ -100,17 +100,23 @@
 }
 
 .edit-container .promo-code-container {
+    display:flex;
+    flex-direction: column;
     background-color: white;
     padding: 5px;
     margin: 15px;
     border-radius: 5px;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .edit-container .promo-code-container .promo-input {
     width: 75%;
     max-width: 300px;
     margin-top: 1px;
+}
+
+.edit-container .promo-code-container span {
+    color: red;
 }
 
 .edit-container .summary-container {
