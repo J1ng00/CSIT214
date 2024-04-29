@@ -1,58 +1,3 @@
-//----------default data used for testing----------//
-function addDefaultData() {
-    let eventsArr = [];
-    eventsArr.push({
-        "day": 28,
-        "month": 4,
-        "year": 2024,
-        "events": [{
-            "title": "Test",
-            "time": "12:00 PM - 1:00 AM",
-            "price": "$12 /30 mins",
-            "capacity": "10pax"
-        }]
-    });
-    eventsArr.push({
-        "day": 28,
-        "month": 4,
-        "year": 2024,
-        "events": [{
-            "title": "Test2",
-            "time": "1:00 PM - 2:00 PM",
-            "price": "$15 /30 mins",
-            "capacity": "15pax"
-        }]
-    });
-    let promosArr = [];
-    promosArr.push({
-        "title": "Promo1",
-        "amount": "10%"
-    });
-    bookingsArr.push({
-        "ref": "1001",
-        "event": {
-            "title": "Test",
-            "time": "12:00 PM - 1:00 AM",
-            "price": "$12 / 30 mins",
-            "capacity": "10pax",
-            "date": "2024 / 4 / 27"
-        },
-        "promo": {
-            "title": "Promo1",
-            "discount": "10 % "
-        },
-        "time": ["1700", "1730"],
-        "cost": "$24",
-        "user": "uowstudent"
-    });
-    localStorage.setItem("bookings", JSON.stringify(bookingsArr));
-    localStorage.setItem("promos", JSON.stringify(promosArr));
-    localStorage.setItem("events", JSON.stringify(eventsArr));
-    console.log("push done");
-    console.log("")
-}
-//----------default data used for testing----------//
-
 //----------Basic Funtion for student.html----------//
 function toggleBooking() {
     const bookingContainer = document.getElementById("booking_container");
@@ -63,12 +8,16 @@ function toggleBooking() {
 
 //----------Initailize----------//
 function Initialize() {
-  //  addDefaultData();
+    addDefaultData();
     initEventListener();
     parseStudentEvent();
     parsePromoCodes();
     parseBookings();
+    console.log("here111111111111111111")
+    console.log(JSON.stringify(bookingsArray));
+    promptDeleted();
     addStudentEvent();
+    getRefNow();
     resetSummary();
 
     // for console logs
@@ -109,8 +58,7 @@ function initEventListener() {
 
     document.getElementById('book_btn').addEventListener('click', () => {
         book();
-        bookingsArr = bookingsArray;
-        localStorage.setItem("bookings", JSON.stringify(bookingsArr));
+        localStorage.setItem("bookings", JSON.stringify(bookingsArray));
         //window.location.href = "payment.html";
     });
 
@@ -260,8 +208,6 @@ function parseBookings() {
             bookingsArray.push(new Bookings(booking.ref, booking.user, booking.event, booking.promo, booking.time, booking.cost));
 
         });
-
-        getRefNow();
 
         console.log(`Total ${count} booking(s) pulled from local storage`);
         console.log('');
@@ -502,3 +448,13 @@ function book() {
 }
 //----------book----------//
 //----------Update Booking Container when click on Event btn----------//
+
+//----------prompt user if its bookings get deleted----------//
+function promptDeleted() {
+
+    deletedArray.forEach(deleted => {
+        alert(`Your booking ${deleted.getRef()} had been cancelled!`)
+    });
+
+}
+//----------prompt user if its bookings get deleted----------//

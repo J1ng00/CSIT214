@@ -1,76 +1,3 @@
-//----------default data used for testing----------//
-function addDefaultData() {
-    let eventsArr = [];
-    eventsArr.push({
-        "day": 28,
-        "month": 4,
-        "year": 2024,
-        "events": [{
-            "title": "Test",
-            "time": "12:00 PM - 1:00 AM",
-            "price": "$12 /30 mins",
-            "capacity": "10pax"
-        }]
-    });
-    eventsArr.push({
-        "day": 28,
-        "month": 4,
-        "year": 2024,
-        "events": [{
-            "title": "Test2",
-            "time": "1:00 PM - 2:00 PM",
-            "price": "$15 /30 mins",
-            "capacity": "15pax"
-        }]
-    });
-    let promosArr = [];
-    promosArr.push({
-        "title": "Promo1",
-        "amount": "10%"
-    });
-    let bookingsArr = [];
-    bookingsArr.push({
-        "ref": "1001",
-        "event": {
-            "title": "Test",
-            "time": "12:00 PM - 1:00 AM",
-            "price": "$12 / 30 mins",
-            "capacity": "10pax",
-            "date": "2024 / 4 / 27"
-        },
-        "promo": {
-            "title": "Promo1",
-            "discount": "10 % "
-        },
-        "time": ["1700", "1730"],
-        "cost": "$24",
-        "user": "uowstudent"
-    });
-    bookingsArr.push({
-        "ref": "1002",
-        "event": {
-            "title": "Test",
-            "time": "12:00 PM - 1:00 AM",
-            "price": "$12 / 30 mins",
-            "capacity": "10pax",
-            "date": "2024 / 4 / 27"
-        },
-        "promo": {
-            "title": "Promo1",
-            "discount": "10 % "
-        },
-        "time": ["1800", "1830"],
-        "cost": "$24",
-        "user": "uowstudent"
-    });
-    localStorage.setItem("bookings", JSON.stringify(bookingsArr));
-    localStorage.setItem("promos", JSON.stringify(promosArr));
-    localStorage.setItem("events", JSON.stringify(eventsArr));
-    console.log("push done");
-    console.log("")
-}
-//----------default data used for testing----------//
-
 //----------basic funtion----------//
 function ToggleConfirmationContainer() {
     var confirmation_container = document.getElementById("confirm_container");
@@ -171,6 +98,8 @@ function initEventListener() {
     document.getElementById("confirmation_confirm").addEventListener('click', () => {
 
         cancelBooking(selectedBooking);
+        addBookings();
+        updateBookingContainer(null);
         ToggleConfirmationContainer();
 
     });
@@ -180,7 +109,7 @@ function initEventListener() {
 
 //----------Initailize----------//
 function Initialize() {
-    //addDefaultData();
+    addDefaultData();
     parseEvents();
     parsePromo();
     parseBookings();
@@ -303,7 +232,7 @@ function addBookings() {
         });
     }
 
-    document.getElementById('bookings').insertAdjacentHTML("beforeend", content);
+    document.getElementById('bookings').innerHTML = content;
 
     bookingsArray.forEach((booking, index) => {
         const btn = document.getElementById(`event_btn${index}`)

@@ -2,11 +2,80 @@
 var eventsArray = [];
 var promosArray = [];
 var bookingsArray = [];
-var bookingsArr = [];
+var deletedArray = [];
 var promoApplied = null
 var selectedEvent = null;
 var refNo = 0;
 //----------Global Variables----------//
+
+//----------default data used for testing----------//
+let eventArr = [];
+let promosArr = [];
+let bookingsArr = [];
+function addDefaultData() {
+    eventArr.push({
+        "day": 29,
+        "month": 4,
+        "year": 2024,
+        "events": [{
+            "title": "Test",
+            "time": "12:00 PM - 1:00 AM",
+            "price": "$12 /30 mins",
+            "capacity": "10pax"
+        }]
+    });
+    eventArr.push({
+        "day": 29,
+        "month": 4,
+        "year": 2024,
+        "events": [{
+            "title": "Test2",
+            "time": "1:00 PM - 2:00 PM",
+            "price": "$15 /30 mins",
+            "capacity": "15pax"
+        }]
+    });
+    promosArr.push({
+        "title": "Promo1",
+        "amount": "10%"
+    });
+    bookingsArr.push({
+        "event":
+        {
+            "title": "Test",
+            "time": "12:00 PM - 1:00 AM",
+            "price": "$12 /30 mins",
+            "capacity": "10pax",
+            "date": "2024/4/28"
+        },
+        "promo": null,
+        "ref": 1001,
+        "user": "uowstudent",
+        "time": ["2000", "2030"],
+        "cost": "$24"
+    });
+    bookingsArr.push({
+        "event":
+        {
+            "title": "Test",
+            "time": "12:00 PM - 1:00 AM",
+            "price": "$12 /30 mins",
+            "capacity": "10pax",
+            "date": "2024/4/28"
+        },
+        "promo": null,
+        "ref": 1002,
+        "user": "uowstudent",
+        "time": ["1700", "1730"],
+        "cost": "$24"
+    });
+    localStorage.setItem("bookings", JSON.stringify(bookingsArr));
+    localStorage.setItem("promos", JSON.stringify(promosArr));
+    localStorage.setItem("events", JSON.stringify(eventArr));
+    console.log("push done");
+    console.log("")
+}
+//----------default data used for testing----------//
 
 //----------Events class----------//
 class Event {
@@ -212,11 +281,17 @@ class Bookings {
 
     setEvent(event) {
 
-        const matchedEvent = eventsArray.find(e => e.getTitle() === event.title);
+        if (event !== null) {
+            const matchedEvent = eventsArray.find(e => e.getTitle() === event.title);
 
-        if (matchedEvent) {
-            this.event = matchedEvent;
+            if (matchedEvent) {
+                this.event = matchedEvent;
+            } else {
+                this.event = null;
+                deletedArray.push(this);
+            }
         }
+
     }
 
     setPromo(promo) {
