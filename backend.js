@@ -1,6 +1,12 @@
 //store events in local storage 
 window.saveEvents = function () {
-    localStorage.setItem("events", JSON.stringify(eventsArr));
+
+    let check = localStorage.getItem("events");
+
+    if (!check) {
+        localStorage.setItem("events", JSON.stringify(eventsArr));
+    }
+
 }
 
 window.getEvents = function () {
@@ -14,7 +20,13 @@ window.getEvents = function () {
 
 
 window.savePromo = function () {
-    localStorage.setItem("promos", JSON.stringify(promosArr));
+
+    let check = localStorage.getItem("promos");
+
+    if (!check) {
+        localStorage.setItem("promos", JSON.stringify(promosArr));
+    }
+
 }
 
 window.getPromo = function () {
