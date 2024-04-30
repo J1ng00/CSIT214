@@ -13,12 +13,10 @@ function Initialize() {
     parseStudentEvent();
     parsePromoCodes();
     parseBookings();
-    console.log("here111111111111111111")
-    console.log(JSON.stringify(bookingsArray));
     promptDeleted();
-    addStudentEvent();
     getRefNow();
     resetSummary();
+    addStudentEvent();
 
     // for console logs
     consoleLog();
@@ -267,7 +265,7 @@ function addStudentEvent() {
         }
     });
 
-    document.getElementById('events_container').insertAdjacentHTML('beforeend', content);
+    document.getElementById('events_container').innerHTML = content;
 
     // Implement event listener for event-btn
     eventsArray.forEach((event, index) => {

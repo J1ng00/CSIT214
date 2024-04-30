@@ -18,6 +18,11 @@ function logout(){
 var currentPage = window.location.pathname;
 
 function generateMenu() {
+
+    let user = JSON.parse(localStorage.getItem("userNow"));
+
+    document.querySelector(".information-container-title").innerHTML = user;
+    
     var menu = document.querySelector(".menu");
     
     // Clear existing menu items
@@ -26,12 +31,10 @@ function generateMenu() {
     // Generate menu items based on the current page
     if (currentPage.includes("student.html")|| currentPage.includes("payment.html")) {
         menu.innerHTML += '<a href="../booking.html"><li>My Booking</li></a>';
-        menu.innerHTML += '<a href="../staff.html"><li>Staff</li></a>';
     } else if(currentPage.includes("booking.html")){
         menu.innerHTML += '<a href="../student.html"><li>Home Page</li></a>';
     }else if (currentPage.includes("staff.html")) {
         menu.innerHTML += '<a href="../promo.html"><li>Promo</li></a>';
-        menu.innerHTML += '<a href="../student.html"><li>Home Page</li></a>';
     } else if (currentPage.includes("promo.html")) {
         menu.innerHTML += '<a href="../staff.html"><li>Staff</li></a>';
     } else {
