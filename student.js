@@ -8,7 +8,7 @@ function toggleBooking() {
 
 //----------Initailize----------//
 function Initialize() {
-    addDefaultData();
+    //addDefaultData();
     initEventListener();
     parseStudentEvent();
     parsePromoCodes();

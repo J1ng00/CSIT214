@@ -3,7 +3,7 @@ window.saveEvents = function () {
 
     let check = localStorage.getItem("events");
 
-    if (!check) {
+    if (check) {
         localStorage.setItem("events", JSON.stringify(eventsArr));
     }
 
@@ -23,7 +23,7 @@ window.savePromo = function () {
 
     let check = localStorage.getItem("promos");
 
-    if (!check) {
+    if (check) {
         localStorage.setItem("promos", JSON.stringify(promosArr));
     }
 
