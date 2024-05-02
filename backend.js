@@ -1,15 +1,13 @@
 //store events in local storage 
-window.saveEvents = function () {
+function saveEvents() {
 
-    let check = localStorage.getItem("events");
-
-    if (check) {
+    if (!(localStorage.getItem("events"))) {
         localStorage.setItem("events", JSON.stringify(eventsArr));
     }
 
 }
 
-window.getEvents = function () {
+function getEvents() {
 
     if (localStorage.getItem("events") !== null) {
         return;
@@ -19,17 +17,15 @@ window.getEvents = function () {
 }
 
 
-window.savePromo = function () {
+function savePromo() {
 
-    let check = localStorage.getItem("promos");
-
-    if (check) {
+    if (!(localStorage.getItem("promos"))) {
         localStorage.setItem("promos", JSON.stringify(promosArr));
     }
 
 }
 
-window.getPromo = function () {
+function getPromo() {
 
     // Check if "promos" exist in localStorage
     if (localStorage.getItem("promos") !== null) {

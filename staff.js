@@ -21,6 +21,7 @@ let year = today.getFullYear();
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 let eventsArr = [];
+getEvents();
 
 //function to add days
 function initCalendar() {
@@ -183,13 +184,13 @@ const addEventBtn = document.querySelector(".add-event"),
     toHour = document.querySelector(".ToHours"),
     toMinute = document.querySelector(".ToTime"),
     toIdentifier = document.querySelector(".ToIdentifier");
-    
+
 addEventBtn.addEventListener("click", () => {
     addEventContainer.classList.toggle("active");
 })
 
 
-addEventCloseBtn.addEventListener("click", ()=>{
+addEventCloseBtn.addEventListener("click", () => {
     addEventContainer.classList.remove("active");
 });
 
@@ -324,116 +325,116 @@ function updateEvents(date) {
 }
 
 //function to add events
-    addEventSubmit.addEventListener("click", () => {
-        const eventTitle = addEventTitle.value;
-        const eventfromHour = fromHour.value;
-        const eventfromMinute = fromMinute.value;
-        const eventfromIdentifier = fromIdentifier.value;
-        const eventtoHour = toHour.value;
-        const eventtoMinute = toMinute.value;
-        const eventtoIdentifier = toIdentifier.value;
-        const eventTimeFrom = eventfromHour + ":" + eventfromMinute + " " + eventfromIdentifier;
-        const eventTimeTo = eventtoHour + ":" + eventtoMinute + " " + eventtoIdentifier
+addEventSubmit.addEventListener("click", () => {
+    const eventTitle = addEventTitle.value;
+    const eventfromHour = fromHour.value;
+    const eventfromMinute = fromMinute.value;
+    const eventfromIdentifier = fromIdentifier.value;
+    const eventtoHour = toHour.value;
+    const eventtoMinute = toMinute.value;
+    const eventtoIdentifier = toIdentifier.value;
+    const eventTimeFrom = eventfromHour + ":" + eventfromMinute + " " + eventfromIdentifier;
+    const eventTimeTo = eventtoHour + ":" + eventtoMinute + " " + eventtoIdentifier
 
-        if (eventTitle == "" || eventfromHour == "" || eventfromMinute == ""|| eventfromIdentifier == "" 
-        || eventtoHour == ""|| eventtoMinute == ""||eventtoIdentifier == "") {
-            alert("Please fill in all the fields");
-            return;
-        }
+    if (eventTitle == "" || eventfromHour == "" || eventfromMinute == "" || eventfromIdentifier == ""
+        || eventtoHour == "" || eventtoMinute == "" || eventtoIdentifier == "") {
+        alert("Please fill in all the fields");
+        return;
+    }
 
-        const timeFromArr = eventTimeFrom.split(":");
-        const timeToArr = eventTimeTo.split(":");
+    const timeFromArr = eventTimeFrom.split(":");
+    const timeToArr = eventTimeTo.split(":");
 
-        if (timeFromArr.length != 2 ||
-            timeToArr.length != 2 ||
-            timeFromArr[0] > 23 ||
-            timeFromArr[1] > 59 ||
-            timeToArr[0] > 23 ||
-            timeToArr[1] > 59) {
+    if (timeFromArr.length != 2 ||
+        timeToArr.length != 2 ||
+        timeFromArr[0] > 23 ||
+        timeFromArr[1] > 59 ||
+        timeToArr[0] > 23 ||
+        timeToArr[1] > 59) {
 
-            alert("Invalid Time Format");
-        }
+        alert("Invalid Time Format");
+    }
 
-        const startTimeParts = eventTimeFrom.split(":");
-        let startHour = parseInt(startTimeParts[0]);
-        const startMinute = parseInt(startTimeParts[1]);
+    const startTimeParts = eventTimeFrom.split(":");
+    let startHour = parseInt(startTimeParts[0]);
+    const startMinute = parseInt(startTimeParts[1]);
 
-        if (eventTimeFrom.includes("PM") && startHour !== 12) {
-            startHour += 12;
-        } else if (eventTimeFrom.includes("AM") && startHour === 12) {
-            startHour = 0;
-        }
+    if (eventTimeFrom.includes("PM") && startHour !== 12) {
+        startHour += 12;
+    } else if (eventTimeFrom.includes("AM") && startHour === 12) {
+        startHour = 0;
+    }
 
-        const endTimeParts = eventTimeTo.split(":");
-        let endHour = parseInt(endTimeParts[0]);
-        const endMinute = parseInt(endTimeParts[1]);
+    const endTimeParts = eventTimeTo.split(":");
+    let endHour = parseInt(endTimeParts[0]);
+    const endMinute = parseInt(endTimeParts[1]);
 
-        if (eventTimeTo.includes("PM") && endHour !== 12) {
-            endHour += 12;
-        } else if (eventTimeTo.includes("AM") && endHour === 12) {
-            endHour = 0;
-        }
+    if (eventTimeTo.includes("PM") && endHour !== 12) {
+        endHour += 12;
+    } else if (eventTimeTo.includes("AM") && endHour === 12) {
+        endHour = 0;
+    }
 
-        const startTime = new Date(year, month, activeDay, startHour, startMinute);
-        const endTime = new Date(year, month, activeDay, endHour, endMinute);
+    const startTime = new Date(year, month, activeDay, startHour, startMinute);
+    const endTime = new Date(year, month, activeDay, endHour, endMinute);
 
-        if (startTime >= endTime) {
-            alert("End time must be after start time");
-            return;
-        }
+    if (startTime >= endTime) {
+        alert("End time must be after start time");
+        return;
+    }
 
-        const timeFrom = convertTime(eventTimeFrom);
-        const timeTo = convertTime(eventTimeTo);
-        const roomPrice = document.querySelector(".roomPrice").value;
-        const roomCap = document.querySelector(".capNumber").value;
+    const timeFrom = convertTime(eventTimeFrom);
+    const timeTo = convertTime(eventTimeTo);
+    const roomPrice = document.querySelector(".roomPrice").value;
+    const roomCap = document.querySelector(".capNumber").value;
 
-        const newEvent = {
-            title: eventTitle,
-            time: timeFrom + " - " + timeTo,
-            price: "$" + roomPrice +" /30 mins",
-            capacity: roomCap + "pax"
-        };
+    const newEvent = {
+        title: eventTitle,
+        time: timeFrom + " - " + timeTo,
+        price: "$" + roomPrice + " /30 mins",
+        capacity: roomCap + "pax"
+    };
 
-        let eventAdded = false;
+    let eventAdded = false;
 
-        //check if eventsarr not empty
-        if (eventsArr.length > 0) {
-            //check if current day already has any event then add to that
-            eventsArr.forEach((item) => {
-                if (item.day == activeDay && item.month == month + 1 && item.year == year) {
-                    item.events.push(newEvent);
-                    eventAdded = true;
-                }
-            });
-        }
+    //check if eventsarr not empty
+    if (eventsArr.length > 0) {
+        //check if current day already has any event then add to that
+        eventsArr.forEach((item) => {
+            if (item.day == activeDay && item.month == month + 1 && item.year == year) {
+                item.events.push(newEvent);
+                eventAdded = true;
+            }
+        });
+    }
 
-        //if event array empty or current day has no event create new
-        if (!eventAdded) {
-            eventsArr.push({
-                day: activeDay, month: month + 1, year: year, events: [newEvent],
-            });
-        }
+    //if event array empty or current day has no event create new
+    if (!eventAdded) {
+        eventsArr.push({
+            day: activeDay, month: month + 1, year: year, events: [newEvent],
+        });
+    }
 
-        //remove active from add event form
-        addEventContainer.classList.remove("active")
-        //clear the fileds
-        addEventTitle.value = "";
-        fromHour.value = "";
-        fromMinute.value = "";
-        fromIdentifier.value= "";
-        toHour.value = "";
-        toMinute.value = "";
-        toIdentifier.value= "";
+    //remove active from add event form
+    addEventContainer.classList.remove("active")
+    //clear the fileds
+    addEventTitle.value = "";
+    fromHour.value = "";
+    fromMinute.value = "";
+    fromIdentifier.value = "";
+    toHour.value = "";
+    toMinute.value = "";
+    toIdentifier.value = "";
 
-        //show current added event
-        updateEvents(activeDay);
+    //show current added event
+    updateEvents(activeDay);
 
-        //also add event class to newly added day if not already
-        const activeDayElem = document.querySelector(".day.active");
-        if (!activeDayElem.classList.contains("event")) {
-            activeDayElem.classList.add("event");
-        }
-    });
+    //also add event class to newly added day if not already
+    const activeDayElem = document.querySelector(".day.active");
+    if (!activeDayElem.classList.contains("event")) {
+        activeDayElem.classList.add("event");
+    }
+});
 
 function convertTime(time) {
     let timeArr = time.split(":");
@@ -453,9 +454,9 @@ function convertTime(time) {
 }
 
 var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = "none";
-  }
+}
 
 function convertTo24Hour(time) {
     let [timeStr, period] = time.split(" ");
@@ -522,7 +523,7 @@ function populateModalForEdit(eventTitle) {
             document.querySelector(".modal-time-from-minutes").value = timeFrom[1];
             document.querySelector(".modal-time-from-identifier").value = timeFromParts[1];
             document.querySelector(".modal-time-to-hours").value = timeTo[0];
-            document.querySelector(".modal-time-to-minutes").value = timeTo[1]; 
+            document.querySelector(".modal-time-to-minutes").value = timeTo[1];
             document.querySelector(".modal-time-to-identifier").value = timeToParts[1];
 
             const priceParts = event.price.split(" ");
@@ -579,7 +580,7 @@ function editListing(button) {
         alert("End time must be after start time");
         return; // Don't proceed if validation fails
     }
-    
+
     // Find the day in eventsArr
     const dayIndex = eventsArr.findIndex(day => day.events.some(event => event.title === eventTitle));
     if (dayIndex !== -1) {
@@ -589,8 +590,8 @@ function editListing(button) {
             // Update the event details
             eventsArr[dayIndex].events[eventIndex].title = modalTitleInput;
             eventsArr[dayIndex].events[eventIndex].time = `${timeFrom} - ${timeTo}`;
-            eventsArr[dayIndex].events[eventIndex].price = "$"+modalPriceInput+" /30mins";
-            eventsArr[dayIndex].events[eventIndex].capacity = modalCapacityInput+"pax";
+            eventsArr[dayIndex].events[eventIndex].price = "$" + modalPriceInput + " /30mins";
+            eventsArr[dayIndex].events[eventIndex].capacity = modalCapacityInput + "pax";
 
             // Update the UI with the new event details (optional)
             updateEvents(eventsArr[dayIndex].day);
