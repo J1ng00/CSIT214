@@ -86,6 +86,7 @@ function initEventListener() {
         ToggleEditContainer();
         updateBookingUponConfirm();
         updateBookingContainer(selectedBooking);
+        addBookings();
 
     });
 
@@ -109,7 +110,7 @@ function initEventListener() {
 
 //----------Initailize----------//
 function Initialize() {
-    addDefaultData();
+    //addDefaultData();
     parseEvents();
     parsePromo();
     parseBookings();

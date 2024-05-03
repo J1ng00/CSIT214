@@ -5,7 +5,7 @@ var bookingsArray = [];
 var deletedArray = [];
 var promoApplied = null
 var selectedEvent = null;
-var refNo = 0;
+var refNo = 1000;
 //----------Global Variables----------//
 
 //----------default data used for testing----------//

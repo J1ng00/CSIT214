@@ -1,15 +1,13 @@
 //store events in local storage 
 function saveEvents() {
 
-    if (!(localStorage.getItem("events"))) {
         localStorage.setItem("events", JSON.stringify(eventsArr));
-    }
 
 }
 
 function getEvents() {
 
-    if (localStorage.getItem("events") !== null) {
+    if (!localStorage.getItem("events")) {
         return;
     }
 

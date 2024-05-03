@@ -30,18 +30,18 @@ function generateMenu() {
 
     // Generate menu items based on the current page
     if (currentPage.includes("student.html")|| currentPage.includes("payment.html")) {
-        menu.innerHTML += '<a href="../booking.html"><li>My Booking</li></a>';
+        menu.innerHTML += '<a href="./booking.html"><li>My Booking</li></a>';
     } else if(currentPage.includes("booking.html")){
-        menu.innerHTML += '<a href="../student.html"><li>Home Page</li></a>';
+        menu.innerHTML += '<a href="./student.html"><li>Home Page</li></a>';
     }else if (currentPage.includes("staff.html")) {
-        menu.innerHTML += '<a href="../promo.html"><li>Promo</li></a>';
+        menu.innerHTML += '<a href="./promo.html"><li>Promo</li></a>';
     } else if (currentPage.includes("promo.html")) {
-        menu.innerHTML += '<a href="../staff.html"><li>Staff</li></a>';
+        menu.innerHTML += '<a href="./staff.html"><li>Staff</li></a>';
     } else {
         // Default menu items for other pages
-        menu.innerHTML += '<a href="../student.html"><li>Student</li></a>';
-        menu.innerHTML += '<a href="../staff.html"><li>Staff</li></a>';
-        menu.innerHTML += '<a href="../payment.html"><li>Payment</li></a>';
+        menu.innerHTML += '<a href="./student.html"><li>Student</li></a>';
+        menu.innerHTML += '<a href="./staff.html"><li>Staff</li></a>';
+        menu.innerHTML += '<a href="./payment.html"><li>Payment</li></a>';
     }
     
 }
