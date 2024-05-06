@@ -116,13 +116,15 @@
 .events .event:hover .title h3,
 .events .event:hover .event-time,
 .events .event:hover .event-price,
-.events .event:hover .event-cap {
+.events .event:hover .event-cap,
+.events .event:hover .event-stats {
     color: #fff;
 }
 
 .events .event .event-time,
 .events .event .event-price,
-.events .event .event-cap {
+.events .event .event-cap,
+.events .event .event-stats {
     font-size: 0.8rem;
     font-weight: 400;
     color: #373c4f;
@@ -138,6 +140,11 @@
 
 .events .event .event-cap {
     margin-top: 5px;
+}
+
+.events .event .event-stats {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .events .event::after {
@@ -526,4 +533,28 @@
     transition: all 0.3s ease-in-out;
     z-index: 1;
     overflow: hidden;
+}
+
+.LaunchListing-btn {
+  margin: 0px 5px 5px 5px;
+  width: 30%;
+  position: relative;
+  background-color: rgb(0, 226, 23);
+  border-radius: 7px;
+  box-shadow: rgb(0, 153, 3) 0px 4px 0px 0px;
+  padding: 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 30px;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.event.green-event {
+    background-color: rgba(7, 218, 91, 0.395);
 }

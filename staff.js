@@ -306,6 +306,9 @@ function updateEvents(date) {
                             <div class="event-cap">
                                 <span>${event.capacity}</span>
                             </div>
+                            <div class="event-stats">
+                                <span>${event.status}</span>
+                            </div>
                         </div>
                     </div>`;
             });
@@ -392,7 +395,8 @@ addEventSubmit.addEventListener("click", () => {
         title: eventTitle,
         time: timeFrom + " - " + timeTo,
         price: "$" + roomPrice + " /30 mins",
-        capacity: roomCap + "pax"
+        capacity: roomCap + "pax",
+        status: "Status: Not Launched"
     };
 
     let eventAdded = false;
@@ -600,4 +604,36 @@ function editListing(button) {
 
     // Close the modal after editing
     modal.style.display = "none";
+}
+
+function launchRoom(){
+    const modalTitle = document.querySelector(".modal-title");
+    const eventTitle = modalTitle.textContent;
+
+    eventsArr.forEach((event) => {
+        if (event.day == activeDay && event.month == month + 1 && event.year == year) {
+            event.events.forEach((item, index) => {
+                if (item.title == eventTitle) {
+                    event.events.splice(index, 1);
+                }
+            });
+        
+            event.status = "Status: Launched";
+            updateEventStatus(eventTitle, event.status);
+        }
+    });
+
+    modal.style.display = "none";
+}
+
+function updateEventStatus(eventTitle, newStatus) {
+    const eventElements = document.querySelectorAll('.event-title');
+    eventElements.forEach(element => {
+        if (element.textContent === eventTitle) {
+            const eventElement = element.parentElement.parentElement;
+            eventElement.classList.add('green-event');
+            const eventStatusElement = element.parentElement.nextElementSibling.querySelector('.event-stats');
+            eventStatusElement.innerHTML = `<b>${newStatus}</b>`;
+        }
+    });
 }
