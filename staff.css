@@ -558,3 +558,7 @@
 .event.green-event {
     background-color: rgba(7, 218, 91, 0.395);
 }
+
+.events .event.event.green-event:nth-child(even) {
+    background-color: rgba(7, 218, 91, 0.395);
+}
